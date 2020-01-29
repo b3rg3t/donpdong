@@ -1,16 +1,19 @@
 import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
 import Link from "next/link";
-type PostLinkProps = {
+
+interface PostLinkProps {
   title?: string;
-};
-const PostLink: React.FunctionComponent<PostLinkProps> = ({ title }) => {
+}
+const PostLink = ({ title }: PostLinkProps): React.ReactElement => {
   return (
-    <li>
-      <Link href={`/post?title=${title}`}>
-        <a>{title}</a>
-      </Link>
-    </li>
+    <ul>
+      <li>
+        <Link href={`/post?title=${title}`}>
+          <a>{title}</a>
+        </Link>
+      </li>
+    </ul>
   );
 };
 const About: React.FunctionComponent = () => {
