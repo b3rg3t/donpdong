@@ -3,7 +3,6 @@ import "./imageblock.scss";
 import { imageData } from "../dummyData";
 
 const ImageBlock = (): React.ReactElement => {
-  console.log(imageData);
   return imageData ? (
     <>
       {imageData.map((img, index) => (
@@ -16,20 +15,21 @@ const ImageBlock = (): React.ReactElement => {
             backgroundPosition: "center center"
           }}
         >
-          <div className="image-block__layer" />
+          <div
+            className="image-block__layer"
+            style={{ background: `${img.overlayColor}` }}
+          />
           <div className="image-block__content">
             <div>
               <h3>{img.name}</h3>
             </div>
-            <div className="image-block__content__boxes">
+            <div className={`image-block__content__boxes ${img.position}`}>
               <div className="image-block__content__boxes__img">
                 <img src={img.smallPic} alt={img.alt} />
               </div>
               <div className="image-block__content__boxes__text">
-                <p>
-                  <strong>{img.descripion}</strong>
-                </p>
-                <p>{img.fulltext}</p>
+                <p className="text-top">{img.descripion}</p>
+                <p className="text-bottom">{img.fulltext}</p>
               </div>
             </div>
           </div>

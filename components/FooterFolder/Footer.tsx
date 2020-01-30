@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.scss";
-import heights from "../../helpers/picturehelp";
+import heights from "../../helpers/helpdata";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = (): React.ReactElement => {

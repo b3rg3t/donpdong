@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import "./navigation.scss";
-import heights from "../../helpers/picturehelp";
+import heights from "../../helpers/helpdata";
 
 const Navigation = (): React.ReactElement => {
   return (

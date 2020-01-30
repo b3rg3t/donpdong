@@ -1,5 +1,5 @@
 import React from "react";
-import heights from "../../helpers/picturehelp";
+// import heights from "../../helpers/picturehelp";
 import "./hero.scss";
 
 const FirstComponent = (): React.ReactElement => {
@@ -8,7 +8,8 @@ const FirstComponent = (): React.ReactElement => {
       <section
         className="hero"
         style={{
-          height: `calc(100vh - ${heights.navHeigt})`,
+          // - ${heights.navHeigt}
+          height: `calc(100vh )`, 
           backgroundImage: `url(./images/yogahero.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center center"
