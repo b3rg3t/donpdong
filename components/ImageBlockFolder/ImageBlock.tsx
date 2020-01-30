@@ -17,7 +17,10 @@ const ImageBlock = (): React.ReactElement => {
         >
           <div
             className="image-block__layer"
-            style={{ background: `${img.overlayColor}` }}
+            style={{
+              background: `${img.overlayColor}`,
+              opacity: `${img.opacity}`
+            }}
           />
           <div className="image-block__content">
             <div>

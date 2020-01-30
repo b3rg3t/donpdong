@@ -5,23 +5,25 @@ export const imageData = [
     name: "Lorem ipsum, dolor sit amet consectetur ",
     pic: "./images/yoga1.jpg",
     smallPic: "./images/yoga2.jpg",
-    position: "left",
+    position: "right",
     alt: "Cat behind bars",
     overlayColor: "rgb(253, 253, 253)",
+    opacity: 0.8,
     descripion:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?",
     time: "5 minutes",
     author: "James Cameron",
     fulltext:
-      "Lorem, ipsum dolor tetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignistetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignistetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignistetur adipisicing elit. Sint tetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignistetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignistetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignistetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignistetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignistetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignisquidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?"
+      "Lorem, ipsum dolor tetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda ar"
   },
   {
     name: "Meow",
     pic: "",
     smallPic: "./images/yoga3.jpg",
-    position: "right",
+    position: "left",
     alt: "Cat behind bars",
-    overlayColor: "rgb(253, 253, 253)",
+    overlayColor: "",
+    opacity: "",
     descripion:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?",
     author: "James Cameron",
@@ -32,14 +34,33 @@ export const imageData = [
     name: "Meow",
     pic: "../images/yoga2.jpg",
     smallPic: "./images/yoga4.jpg",
-    position: "left",
+    position: "right",
     alt: "Cat behind bars",
     overlayColor: "rgb(253, 253, 253)",
+    opacity: 0.8,
     descripion:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?",
     time: "5 minutes",
     author: "James Cameron",
     fulltext:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?"
+  }
+];
+
+export const profileData = [
+  {
+    name: "Lorem ipsum, dolor sit amet consectetur ",
+    pic: "./images/yoga1.jpg",
+    smallPic: "./images/profil.jpg",
+    position: "left",
+    alt: "Cat behind bars",
+    overlayColor: "lightgray",
+    opacity: 0.6,
+    descripion:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?",
+    time: "5 minutes",
+    author: "James Cameron",
+    fulltext:
+      "Lorem, ipsum dolor tetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda ar"
   }
 ];
