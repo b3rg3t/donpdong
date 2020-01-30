@@ -1,0 +1,17 @@
+@import "../../assets/colors.scss";
+
+nav {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    padding: 0.5rem;
+  }
+  .nav__boxes {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

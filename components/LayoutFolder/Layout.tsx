@@ -1,6 +1,6 @@
 import * as React from "react";
 import Head from "next/head";
-import Navigation from "../Navigation";
+import Navigation from "../NavigationFolder/Navigation";
 import Footer from "../FooterFolder/Footer";
 import "./layout.scss";
 
