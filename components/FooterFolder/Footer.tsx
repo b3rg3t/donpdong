@@ -20,7 +20,7 @@ const Footer = (): React.ReactElement => {
           </a>
         </div>
         <div>
-          <p>Copywright 2020</p>
+          <p>© Copywright 2020</p>
         </div>
       </footer>
     </>

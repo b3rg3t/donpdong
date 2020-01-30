@@ -2,7 +2,7 @@
 
 export const imageData = [
   {
-    name: "Meow",
+    name: "Lorem ipsum, dolor sit amet consectetur ",
     pic: "./images/yoga1.jpg",
     smallPic: "./images/yoga2.jpg",
     position: "left",

@@ -10,6 +10,7 @@ const Form = (): React.ReactElement => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -24,32 +25,30 @@ const Form = (): React.ReactElement => {
     };
     let response;
     try {
-      const postBasin = await axios.post(
-        `${helpdata.url}`,
-        data,
-        {
-          headers
-        }
-      );
+      const postBasin = await axios.post(`${helpdata.url}`, data, {
+        headers
+      });
       response = await postBasin;
       if (response.status === 200) {
+        console.log("status", response.status);
         setLoading(false);
         setName("");
         setEmail("");
         setMessage("");
+        setSubmitMessage("Email sent");
       } else {
         console.log("Something went wrong" + response.status);
       }
     } catch (error) {
       console.log(error);
       setLoading(false);
-      alert("Something went wrong, try again later");
+      setSubmitMessage("Something went wrong, " + error.message);
     }
   };
-
+  const isDisabled = message.length > 0 && email.length > 0 && name.length > 0;
   return (
     <section className="contact">
-      <h2 className="contact__head">Contact</h2>
+      <h3 className="contact__head">Kontakt</h3>
       <div className="contact__form__div">
         <form className="contact__form" onSubmit={handleSubmit}>
           <input
@@ -58,7 +57,7 @@ const Form = (): React.ReactElement => {
             name="name"
             value={name}
             onChange={e => setName(e.target.value)}
-            placeholder="Name"
+            placeholder="Namn"
             required
           />
           <br />
@@ -77,16 +76,21 @@ const Form = (): React.ReactElement => {
             name="message"
             value={message}
             onChange={e => setMessage(e.target.value)}
-            placeholder="Write a message"
+            placeholder="Skriv ett meddelande.."
             required
           />
-          <Loading loading={loading} />
-          <input
+          <div className="contact__form__loading">
+            {loading && <Loading loading={loading} />}
+            {submitMessage && <span>{submitMessage}</span>}
+          </div>
+          <button
             className="contact__form__button"
             type="submit"
             value="Submit"
-            // disabled={!isDisabled}
-          />
+            disabled={loading ? isDisabled : !isDisabled}
+          >
+            {!loading ? "Skicka" : "Skickar.."}
+          </button>
           <br />
         </form>
       </div>
