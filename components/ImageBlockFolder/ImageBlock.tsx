@@ -1,37 +1,43 @@
 import React from "react";
 import "./imageblock.scss";
+import { imageData } from "../dummyData";
 
 const ImageBlock = (): React.ReactElement => {
-  return (
-    <section
-      className="image-block"
-      style={{
-        height: `100vh`,
-        backgroundImage: `url(./images/yoga1.jpg)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center center"
-      }}
-    >
-      <div className="image-block__layer" />
-      <div className="image-block__content">
-        <div>
-          <h3>Hello ImageBlock</h3>
-        </div>
-        <div className="image-block__content__boxes">
-          <div>
-            <img src="./images/yoga4.jpg" alt="Yoga is best" width="300px" />
+  console.log(imageData);
+  return imageData ? (
+    <>
+      {imageData.map((img, index) => (
+        <section
+          key={index}
+          className="image-block"
+          style={{
+            backgroundImage: `url(${img.pic})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center center"
+          }}
+        >
+          <div className="image-block__layer" />
+          <div className="image-block__content">
+            <div>
+              <h3>{img.name}</h3>
+            </div>
+            <div className="image-block__content__boxes">
+              <div className="image-block__content__boxes__img">
+                <img src={img.smallPic} alt={img.alt} />
+              </div>
+              <div className="image-block__content__boxes__text">
+                <p>
+                  <strong>{img.descripion}</strong>
+                </p>
+                <p>{img.fulltext}</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              facere fugit vel. Vitae quod itaque ea perferendis optio? Harum et
-              delectus recusandae? Explicabo, porro! Veniam aperiam ducimus
-              delectus alias voluptates.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      ))}
+    </>
+  ) : (
+    <h5>Loading..</h5>
   );
 };
 

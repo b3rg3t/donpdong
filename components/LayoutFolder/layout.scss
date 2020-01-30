@@ -6,7 +6,7 @@
 body {
   padding: 0;
   margin: 0;
-  
+  font-family: 'Dosis', sans-serif;
 }
 .layout {
   min-height: 100vh;
@@ -30,10 +30,23 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+figcaption {
   color: $t-color;
   margin: 0;
   padding: 0;
 }
-
-li{ list-style: none;}
+h1 {
+  font-size: 2.6rem;
+}
+h2 {
+  font-size: 2.3rem;
+}
+h3 {
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+li {
+  list-style: none;
+}

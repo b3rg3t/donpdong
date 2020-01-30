@@ -1,12 +1,15 @@
 @import "../../assets/colors.scss";
 
 .image-block {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
-  text-align: center;
+  h3 {
+    text-align: center;
+  }
   .image-block__layer {
     opacity: 0.5;
     width: 100%;
@@ -17,13 +20,28 @@
   .image-block__content {
     z-index: 2;
     .image-block__content__boxes {
-        max-width: 960px;
+      max-width: 960px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap-reverse;
+      .image-block__content__boxes__img {
+        flex: 1 1 400px;
+        overflow: hidden;
         display: flex;
-        flex-wrap: wrap;
-        div{
-            flex: 1;
-            min-width: 300px;
+        justify-content: center;
+        position: relative;
+        img {
+          max-width: 100%;
+          max-height: auto;
         }
+      }
+      .image-block__content__boxes__text {
+        flex: 1 1 500px;
+        padding: 0 2rem 2rem 2rem;
+        p{
+            padding-bottom: 1rem;
+        }
+      }
     }
   }
 }
