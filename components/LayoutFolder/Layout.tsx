@@ -14,7 +14,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => (
       <title>{title}</title>
     </Head>
     <Navigation />
-    <div className="site-content">{children}</div>
+    <main className="site-content">{children}</main>
     <Footer />
   </div>
 );

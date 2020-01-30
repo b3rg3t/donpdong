@@ -5,7 +5,7 @@ import "./hero.scss";
 const FirstComponent = (): React.ReactElement => {
   return (
     <>
-      <div
+      <section
         className="hero"
         style={{
           height: `calc(100vh - ${heights.navHeigt}`,
@@ -23,7 +23,8 @@ const FirstComponent = (): React.ReactElement => {
           Assumenda eaque aperiam repellat nisi iste dolorum sint delectus
           asperiores. A, harum consequuntur?
         </p>
-      </div>
+        <p className="hero__quote">"Lorem ipsum dolor sit amet consectetur adipisicing elit"</p>
+      </section>
     </>
   );
 };
