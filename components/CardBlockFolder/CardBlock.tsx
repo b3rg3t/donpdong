@@ -8,12 +8,12 @@ const CardBlock = (): React.ReactElement => {
         <div className="cards__block">
           <article className="cards__panels">
             <div className="card__panels__div">
-              <h3>Hello</h3>
+              <h3>Yoga 1</h3>
             </div>
             <div className="card__panels__div">
               <GiHemp color="gray" size="8rem" />
             </div>
-            <div className="card__panels__div">
+            <div className="card__panels__div text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
               vel reiciendis corporis pariatur adipisci illo quis explicabo ex
               aperiam suscipit, dolorem cupiditate nobis esse animi sequi totam
@@ -25,12 +25,12 @@ const CardBlock = (): React.ReactElement => {
           </article>
           <div className="cards__panels">
             <div className="card__panels__div">
-              <h3>Hello</h3>
+              <h3>Yoga 2</h3>
             </div>
             <div className="card__panels__div">
               <GiTurd color="gray" size="8rem" />
             </div>
-            <div className="card__panels__div">
+            <div className="card__panels__div text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
               vel reiciendis corporis pariatur adipisci illo quis explicabo ex
               aperiam suscipit, dolorem cupiditate nobis esse animi sequi totam
@@ -42,16 +42,19 @@ const CardBlock = (): React.ReactElement => {
           </div>
           <div className="cards__panels">
             <div className="card__panels__div">
-              <h3>Hello</h3>
+              <h3>Yoga 3</h3>
             </div>
             <div className="card__panels__div">
               <GiCaduceus color="gray" size="8rem" />
             </div>
-            <div className="card__panels__div">
+            <div className="card__panels__div text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
               vel reiciendis corporis pariatur adipisci illo quis explicabo ex
               aperiam suscipit, dolorem cupiditate nobis esse animi sequi totam
-              dolorum molestias dicta!
+              dolorum molestias dicta! aperiam suscipit, dolorem cupiditate
+              nobis esse animi sequi totam dolorum molestias dicta! aperiam suscipit, dolorem cupiditate nobis esse animi sequi totam
+              dolorum molestias dicta! aperiam suscipit, dolorem cupiditate
+              nobis esse animi sequi totam dolorum molestias dicta!
             </div>
             <div className="card__panels__div">
               <button>Läs mer</button>
@@ -88,13 +91,17 @@ const CardBlock = (): React.ReactElement => {
           -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
         }
-        .card__panels__div{
-            display: flex;
-            justify-content: center;
-            padding: 1rem;
+        .card__panels__div {
+          display: flex;
+          justify-content: center;
+          padding: 1rem;
         }
-        img {
-          object-fit: contain;
+        .text {
+          height: 150px;
+          overflow: auto;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f9f9f9; 
         }
       `}</style>
     </>

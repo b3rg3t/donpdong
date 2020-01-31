@@ -48,8 +48,8 @@ const Form = (): React.ReactElement => {
   const isDisabled = message.length > 0 && email.length > 0 && name.length > 0;
   return (
     <section className="contact">
-      <h3 className="contact__head">Kontakt</h3>
       <div className="contact__form__div">
+        <h3 className="contact__head">Kontakt</h3>
         <form className="contact__form" onSubmit={handleSubmit}>
           <input
             aria-label="name"
@@ -81,7 +81,7 @@ const Form = (): React.ReactElement => {
           />
           <div className="contact__form__loading">
             {loading && <Loading loading={loading} />}
-            {submitMessage && <span>{submitMessage}</span>}
+            {submitMessage && <span aria-role="alert">{submitMessage}</span>}
           </div>
           <button
             className="contact__form__button"

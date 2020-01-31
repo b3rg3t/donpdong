@@ -1,4 +1,3 @@
-// import Cat1 from "../images/cat1.jpg";
 
 export const imageData = [
   {
@@ -48,6 +47,24 @@ export const imageData = [
 ];
 
 export const profileData = [
+  {
+    name: "Greta Thunberg",
+    pic: "./images/yoga1.jpg",
+    smallPic: "./images/profil.jpg",
+    position: "left",
+    alt: "Cat behind bars",
+    overlayColor: "white",
+    opacity: 0.8,
+    descripion:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?",
+    time: "5 minutes",
+    author: "James Cameron",
+    fulltext:
+      "Lorem, ipsum dolor tetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda ar"
+  }
+];
+
+export const cardData = [
   {
     name: "Greta Thunberg",
     pic: "./images/yoga1.jpg",
