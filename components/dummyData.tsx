@@ -2,8 +2,8 @@
 
 export const imageData = [
   {
-    name: "Lorem ipsum, dolor sit amet consectetur ",
-    pic: "./images/yoga1.jpg",
+    name: "Where does yoga come from",
+    pic: "./images/yoga4.jpg",
     smallPic: "./images/yoga2.jpg",
     position: "right",
     alt: "Cat behind bars",
@@ -17,7 +17,7 @@ export const imageData = [
       "Lorem, ipsum dolor tetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda ar"
   },
   {
-    name: "Meow",
+    name: "Vishnaya yoga",
     pic: "",
     smallPic: "./images/yoga3.jpg",
     position: "left",
@@ -31,7 +31,7 @@ export const imageData = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?"
   },
   {
-    name: "Meow",
+    name: "Acrobatic yoga",
     pic: "../images/yoga2.jpg",
     smallPic: "./images/yoga4.jpg",
     position: "right",
@@ -49,13 +49,13 @@ export const imageData = [
 
 export const profileData = [
   {
-    name: "Lorem ipsum, dolor sit amet consectetur ",
+    name: "Greta Thunberg",
     pic: "./images/yoga1.jpg",
     smallPic: "./images/profil.jpg",
     position: "left",
     alt: "Cat behind bars",
-    overlayColor: "lightgray",
-    opacity: 0.6,
+    overlayColor: "white",
+    opacity: 0.8,
     descripion:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?",
     time: "5 minutes",

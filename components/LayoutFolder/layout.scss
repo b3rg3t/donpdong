@@ -75,3 +75,23 @@ h3 {
 li {
   list-style: none;
 }
+button {
+  margin: auto;
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: $border-image;
+  color: white;
+  border-radius: 30px;
+  border: 1px solid $border-image;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  &:focus {
+      outline: none;
+      border: 1px solid $p-color;
+      border-radius: 30px;
+    }
+    &:disabled {
+      background-color: lightgray;
+      border: 1px solid lightgray;
+    }
+}
