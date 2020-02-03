@@ -17,11 +17,16 @@ class MyDocument extends Document {
             content="Ett svenskt SEO/Sökmotoroptimeringsforum för proffs såväl som nya."
           />
           <meta charSet="utf-8" />
+{/* 
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
-          />
-          <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"></link>
+          /> */}
+
+          <link
+            href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />

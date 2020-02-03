@@ -12,6 +12,11 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => (
   <div className="layout">
     <Head>
       <title>{title}</title>
+      <script
+        async
+        custom-element="amp-form"
+        src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+      ></script>
     </Head>
     <Navigation />
     <main className="site-content">{children}</main>

@@ -7,19 +7,37 @@ import LazyLoad from "react-lazyload";
 import Form from "../components/FormFolder/Form";
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
 import CardBlock from "../components/CardBlockFolder/CardBlock";
+import { useAmp } from "next/amp";
+import AmpStyling from "../components/AMP/AmpStyling";
+
+export const config = { amp: "hybrid" };
 
 const Index: React.FunctionComponent = () => {
+  const isAmp = useAmp();
   return (
     <Layout title="Home">
-      <FirstComponent />
-      <CardBlock />
-      <LazyLoad height={200}>
-        <ProfilBlock />
-      </LazyLoad>
-      <LazyLoad height={200}>
-        <ImageBlock />
-      </LazyLoad>
-      <Form />
+      {!isAmp ? (
+        <>
+          <FirstComponent />
+          <CardBlock />
+          <LazyLoad height={200}>
+            <ProfilBlock />
+          </LazyLoad>
+          <LazyLoad height={200}>
+            <ImageBlock />
+          </LazyLoad>
+          <Form />
+        </>
+      ) : (
+        <>
+          <FirstComponent />
+          <CardBlock />
+          <ProfilBlock />
+          <ImageBlock />
+          {/* <Form /> */}
+          <AmpStyling />
+        </>
+      )}
     </Layout>
   );
 };
