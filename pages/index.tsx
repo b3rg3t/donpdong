@@ -10,6 +10,7 @@ import { useAmp } from "next/amp";
 import AmpStyling from "../components/AMP/AmpStyling";
 import ContactBlock from "../components/ContactBlockFolder/ContactBlock";
 import { SEOdata } from "../helpers/helpdata";
+import Courses from "../components/CoursesFolder/Courses";
 
 export const config = { amp: "hybrid" };
 
@@ -28,6 +29,9 @@ const Index: React.FunctionComponent = () => {
             <ImageBlock />
           </LazyLoad>
           <LazyLoad height={200}>
+            <Courses />
+          </LazyLoad>
+          <LazyLoad height={200}>
             <ContactBlock />
           </LazyLoad>
           <AmpStyling />
@@ -38,6 +42,7 @@ const Index: React.FunctionComponent = () => {
           <CardBlock />
           <ProfilBlock />
           <ImageBlock />
+          <Courses />
           <ContactBlock />
           <AmpStyling />
         </>
