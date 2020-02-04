@@ -1,5 +1,5 @@
 import React from "react";
-import { GiCaduceus, GiTurd, GiHemp } from "react-icons/gi";
+import { GiCaduceus, GiOlive, GiAllSeeingEye } from "react-icons/gi";
 
 const CardBlock = (): React.ReactElement => {
   return (
@@ -11,7 +11,7 @@ const CardBlock = (): React.ReactElement => {
               <h3>Yoga 1</h3>
             </div>
             <div className="card__panels__div">
-              <GiHemp color="gray" size="8rem" />
+              <GiAllSeeingEye color="gray" size="8rem" />
             </div>
             <div className="card__panels__div text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
@@ -28,7 +28,7 @@ const CardBlock = (): React.ReactElement => {
               <h3>Yoga 2</h3>
             </div>
             <div className="card__panels__div">
-              <GiTurd color="gray" size="8rem" />
+              <GiOlive color="gray" size="8rem" />
             </div>
             <div className="card__panels__div text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis

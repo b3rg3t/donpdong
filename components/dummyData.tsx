@@ -16,7 +16,7 @@ export const imageData = [
       "Lorem, ipsum dolor tetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda ar"
   },
   {
-    name: "Vishnaya yoga",
+    name: "Vinyasa yoga",
     pic: "",
     smallPic: "./images/yoga3.jpg",
     position: "left",

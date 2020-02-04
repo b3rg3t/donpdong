@@ -1,11 +1,8 @@
 import React from "react";
 // import heights from "../../helpers/picturehelp";
-import "./hero.scss";
-import { useAmp } from "next/amp";
-import { colors } from "../AMP/AmpStyling";
+// import { colors } from "../AMP/AmpStyling";
 
 const FirstComponent = (): React.ReactElement => {
-  const isAmp = useAmp();
   return (
     <>
       <section
@@ -30,7 +27,6 @@ const FirstComponent = (): React.ReactElement => {
           <i>"Lorem ipsum dolor sit amet consectetur adipisicing elit"</i>
         </p>
       </section>
-      {isAmp && (
         <style jsx global>{`
           .hero {
             display: flex;
@@ -60,7 +56,6 @@ const FirstComponent = (): React.ReactElement => {
             z-index: 2;
           }
         `}</style>
-      )}
     </>
   );
 };

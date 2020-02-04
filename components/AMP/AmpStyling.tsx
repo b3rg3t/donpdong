@@ -1,9 +1,11 @@
 export const colors = {
-    color1: "rgb(126, 38, 38)",
-    color2: "rgb(61, 61, 61)",
-    color3: "rgb(218, 155, 155)",
-    color4: "lightgray",
-    color5: "white"
+    primary: "rgb(126, 38, 38)",
+    third: "rgb(61, 61, 61)",
+    secondary: "rgb(218, 155, 155)",
+    lightgray: "lightgray",
+    white: "white",
+    color6: "#f9f9f9",
+    transparent: "rgba(0, 0, 0, 0)"
 }
 
 const AmpStyling = (): React.ReactElement => {
@@ -32,13 +34,13 @@ const AmpStyling = (): React.ReactElement => {
 
       /* Handle */
       ::-webkit-scrollbar-thumb {
-        background: ${colors.color3};
+        background: ${colors.secondary};
         border-radius: 10px;
       }
 
       /* Handle on hover */
       ::-webkit-scrollbar-thumb:hover {
-        background: ${colors.color1};
+        background: ${colors.primary};
       }
 
       .layout {
@@ -65,7 +67,7 @@ const AmpStyling = (): React.ReactElement => {
       h5,
       h6,
       figcaption {
-        color: ${colors.color2};
+        color: ${colors.third};
         margin: 0;
         padding: 0;
       }
@@ -86,24 +88,24 @@ const AmpStyling = (): React.ReactElement => {
         margin: auto;
         font-weight: 400;
         font-size: 1rem;
-        background-color: ${colors.color3};
-        color: ${colors.color5};
+        background-color: ${colors.secondary};
+        color: ${colors.white};
         border-radius: 30px;
-        border: 1px solid ${colors.color3};
+        border: 1px solid ${colors.secondary};
         padding: 0.5rem 1rem;
         cursor: pointer;
       }
       button:hover{
-          background: ${colors.color1};
+          background: ${colors.primary};
       }
       button:focus {
         outline: none;
-        border: 1px solid ${colors.color1};
+        border: 1px solid ${colors.primary};
         border-radius: 30px;
       }
       button:disabled {
-        background-color: ${colors.color4};
-        border: 1px solid ${colors.color4};
+        background-color: ${colors.lightgray};
+        border: 1px solid ${colors.lightgray};
       }
      
     `}</style>

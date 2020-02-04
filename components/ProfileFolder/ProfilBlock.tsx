@@ -1,13 +1,9 @@
 import React from "react";
 import { profileData } from "../dummyData";
 import Loading from "../loading";
-import "./profileblock.scss";
 import Image from "../AMP/AmpImage";
-import { colors } from "../AMP/AmpStyling";
-import { useAmp } from "next/amp";
 
 const ProfilBlock = (): React.ReactElement => {
-  const isAmp = useAmp();
   return profileData ? (
     <>
       <section
@@ -48,7 +44,6 @@ const ProfilBlock = (): React.ReactElement => {
           </div>
         </div>
       </section>
-      {isAmp && (
         <style jsx global>{`
           .profile-block {
             min-height: 100vh;
@@ -87,7 +82,6 @@ const ProfilBlock = (): React.ReactElement => {
             height: 350px;
             width: 350px;
             object-fit: cover;
-            border: 1rem solid ${colors.color5};
           }
           .text-bottom {
             font-weight: 500;
@@ -117,7 +111,6 @@ const ProfilBlock = (): React.ReactElement => {
             }
           }
         `}</style>
-      )}
     </>
   ) : (
     <Loading loading={true} />

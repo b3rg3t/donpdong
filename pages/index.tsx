@@ -4,11 +4,11 @@ import Layout from "../components/LayoutFolder/Layout";
 import FirstComponent from "../components/HeroFolder/Hero";
 import ImageBlock from "../components/ImageBlockFolder/ImageBlock";
 import LazyLoad from "react-lazyload";
-import Form from "../components/FormFolder/Form";
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
 import CardBlock from "../components/CardBlockFolder/CardBlock";
 import { useAmp } from "next/amp";
 import AmpStyling from "../components/AMP/AmpStyling";
+import ContactBlock from "../components/ContactBlockFolder/ContactBlock";
 
 export const config = { amp: "hybrid" };
 
@@ -26,7 +26,8 @@ const Index: React.FunctionComponent = () => {
           <LazyLoad height={200}>
             <ImageBlock />
           </LazyLoad>
-          <Form />
+          <ContactBlock />
+          <AmpStyling />
         </>
       ) : (
         <>
@@ -34,7 +35,7 @@ const Index: React.FunctionComponent = () => {
           <CardBlock />
           <ProfilBlock />
           <ImageBlock />
-          {/* <Form /> */}
+          <ContactBlock />
           <AmpStyling />
         </>
       )}

@@ -12,5 +12,6 @@ declare namespace JSX {
       'amp-state': any;
       'amp-list': any;
       'amp-analytics': any;
+      iframe: any;
     }
   }
