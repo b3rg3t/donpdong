@@ -27,7 +27,7 @@ const FirstComponent = (): React.ReactElement => {
           <i>"Lorem ipsum dolor sit amet consectetur adipisicing elit"</i>
         </p>
       </section>
-        <style jsx global>{`
+        <style jsx>{`
           .hero {
             display: flex;
             justify-content: center;

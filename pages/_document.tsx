@@ -1,6 +1,8 @@
 import React from "react";
 
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { font } from "../helpers/helpdata";
+import SEOTags from "../components/SEO/seoTags";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -12,21 +14,9 @@ class MyDocument extends Document {
     return (
       <Html lang="sv">
         <Head>
-          <meta
-            name="description"
-            content="Ett svenskt SEO/Sökmotoroptimeringsforum för proffs såväl som nya."
-          />
+          <SEOTags />
           <meta charSet="utf-8" />
-{/* 
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          /> */}
-
-          <link
-            href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
-            rel="stylesheet"
-          ></link>
+          <link href={`${font.url}`} rel="stylesheet"></link>
         </Head>
         <body>
           <Main />

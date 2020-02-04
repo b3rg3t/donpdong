@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Loading from "../loading";
 import helpdata from "../../helpers/helpdata";
-import { colors } from "../AMP/AmpStyling";
+import { colors } from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
 import { contactBlockStyle } from "../../helpers/helpdata";
 
@@ -115,7 +115,7 @@ const Form = (): React.ReactElement => {
           </form>
         </div>
       </section>
-        <style jsx global>{`
+        <style jsx>{`
           .contact {
             display: flex;
             justify-content: center;

@@ -1,5 +1,4 @@
 import React from "react";
-// import "./imageblock.scss";
 import { imageData } from "../dummyData";
 import Image from "../AMP/AmpImage";
 import { useAmp } from "next/amp";

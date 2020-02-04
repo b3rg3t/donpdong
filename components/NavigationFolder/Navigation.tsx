@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import heights from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
-import { colors } from "../AMP/AmpStyling";
+import { colors } from "../../helpers/helpdata";
+import { SEOdata } from "../../helpers/helpdata";
 
 const Navigation = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -12,7 +13,7 @@ const Navigation = (): React.ReactElement => {
         <nav style={{ height: `${heights.navHeigt}` }}>
           <div className="nav__boxes">
             <Link href={isAmp ? `/?amp=1` : `/`}>
-              <a>LOGO</a>
+              <a>{SEOdata.title.toUpperCase()}</a>
             </Link>
           </div>
           <div className="nav__boxes"></div>

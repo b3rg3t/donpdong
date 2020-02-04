@@ -1,12 +1,5 @@
-export const colors = {
-    primary: "rgb(126, 38, 38)",
-    third: "rgb(61, 61, 61)",
-    secondary: "rgb(218, 155, 155)",
-    lightgray: "lightgray",
-    white: "white",
-    color6: "#f9f9f9",
-    transparent: "rgba(0, 0, 0, 0)"
-}
+import { colors, font } from "../../helpers/helpdata";
+
 
 const AmpStyling = (): React.ReactElement => {
   return (
@@ -17,7 +10,7 @@ const AmpStyling = (): React.ReactElement => {
       body {
         padding: 0;
         margin: 0;
-        font-family: "Dosis", sans-serif;
+        font-family: ${font.fontFamily};
       }
       html {
         scroll-behavior: smooth;
@@ -86,7 +79,7 @@ const AmpStyling = (): React.ReactElement => {
       }
       button {
         margin: auto;
-        font-weight: 400;
+        font-weight: 700;
         font-size: 1rem;
         background-color: ${colors.secondary};
         color: ${colors.white};
@@ -97,6 +90,7 @@ const AmpStyling = (): React.ReactElement => {
       }
       button:hover{
           background: ${colors.primary};
+          border: 1px solid ${colors.primary};
       }
       button:focus {
         outline: none;

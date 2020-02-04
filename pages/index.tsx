@@ -1,7 +1,7 @@
 import React from "react";
 
 import Layout from "../components/LayoutFolder/Layout";
-import FirstComponent from "../components/HeroFolder/Hero";
+import Hero from "../components/HeroFolder/Hero";
 import ImageBlock from "../components/ImageBlockFolder/ImageBlock";
 import LazyLoad from "react-lazyload";
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
@@ -9,16 +9,17 @@ import CardBlock from "../components/CardBlockFolder/CardBlock";
 import { useAmp } from "next/amp";
 import AmpStyling from "../components/AMP/AmpStyling";
 import ContactBlock from "../components/ContactBlockFolder/ContactBlock";
+import { SEOdata } from "../helpers/helpdata";
 
 export const config = { amp: "hybrid" };
 
 const Index: React.FunctionComponent = () => {
   const isAmp = useAmp();
   return (
-    <Layout title="Home">
+    <Layout title={`${SEOdata.title} | Home`}>
       {!isAmp ? (
         <>
-          <FirstComponent />
+          <Hero />
           <CardBlock />
           <LazyLoad height={200}>
             <ProfilBlock />
@@ -31,7 +32,7 @@ const Index: React.FunctionComponent = () => {
         </>
       ) : (
         <>
-          <FirstComponent />
+          <Hero />
           <CardBlock />
           <ProfilBlock />
           <ImageBlock />
