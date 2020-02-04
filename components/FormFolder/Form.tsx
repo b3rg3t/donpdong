@@ -98,7 +98,7 @@ const Form = (): React.ReactElement => {
             />
             <div className="contact__form__loading">
               {submitMessage && (
-                <span aria-role="alert" className="loading">
+                <span role="alert" className="loading">
                   {submitMessage}
                 </span>
               )}
@@ -107,7 +107,7 @@ const Form = (): React.ReactElement => {
               className="contact__form__button"
               type="submit"
               value="Submit"
-              disabled={loading ? isDisabled : !isDisabled}
+              disabled={!isAmp ? (loading ? isDisabled : !isDisabled) : null}
             >
               {!loading ? "Skicka" : <Loading loading={loading} />}
             </button>
@@ -121,6 +121,7 @@ const Form = (): React.ReactElement => {
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            margin: 1rem 0;
           }
           .contact h3 {
             margin: 2rem 0;
@@ -180,6 +181,7 @@ const Form = (): React.ReactElement => {
             border: 1px solid ${colors.secondary};
             border-radius: 10px;
           }
+          form button {margin-top: 1rem;}
         `}</style>
     </>
   );

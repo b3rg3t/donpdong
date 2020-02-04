@@ -1,6 +1,5 @@
 import { colors, font } from "../../helpers/helpdata";
 
-
 const AmpStyling = (): React.ReactElement => {
   return (
     <style jsx global>{`
@@ -78,6 +77,8 @@ const AmpStyling = (): React.ReactElement => {
         list-style: none;
       }
       button {
+        height: 40px;
+        width: 120px;
         margin: auto;
         font-weight: 700;
         font-size: 1rem;
@@ -88,9 +89,9 @@ const AmpStyling = (): React.ReactElement => {
         padding: 0.5rem 1rem;
         cursor: pointer;
       }
-      button:hover{
-          background: ${colors.primary};
-          border: 1px solid ${colors.primary};
+      button:hover {
+        background: ${colors.primary};
+        border: 1px solid ${colors.primary};
       }
       button:focus {
         outline: none;
@@ -101,7 +102,6 @@ const AmpStyling = (): React.ReactElement => {
         background-color: ${colors.lightgray};
         border: 1px solid ${colors.lightgray};
       }
-     
     `}</style>
   );
 };

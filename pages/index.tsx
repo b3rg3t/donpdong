@@ -27,7 +27,9 @@ const Index: React.FunctionComponent = () => {
           <LazyLoad height={200}>
             <ImageBlock />
           </LazyLoad>
-          <ContactBlock />
+          <LazyLoad height={200}>
+            <ContactBlock />
+          </LazyLoad>
           <AmpStyling />
         </>
       ) : (

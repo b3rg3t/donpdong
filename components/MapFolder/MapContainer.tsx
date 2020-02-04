@@ -9,6 +9,7 @@ const MapContainer = (): React.ReactElement => {
       <section className="map">
         {isAmp ? (
           <amp-iframe
+            title="Linköping"
             width={contactBlockStyle.width}
             height={contactBlockStyle.height}
             sandbox="allow-scripts allow-same-origin"
@@ -18,6 +19,7 @@ const MapContainer = (): React.ReactElement => {
           ></amp-iframe>
         ) : (
           <iframe
+            title="Linköping"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66892.319850884!2d15.540734645536086!3d58.4037694463122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46596e719a049f95%3A0x400fef341e48e70!2sLink%C3%B6ping!5e0!3m2!1ssv!2sse!4v1580805816950!5m2!1ssv!2sse"
             width={contactBlockStyle.width}
             height={contactBlockStyle.height}
@@ -29,6 +31,7 @@ const MapContainer = (): React.ReactElement => {
       </section>
       <style jsx>{`
         .map {
+          margin: 1rem 0;
           border-radius: 1rem;
           overflow: hidden;
           display: flex;

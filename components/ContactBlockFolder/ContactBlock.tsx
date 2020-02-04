@@ -13,13 +13,13 @@ const ContactBlock = (): React.ReactElement => {
       </section>
       <style jsx>{`
         .contact-block {
-          height: 100vh;
-          width: 960px;
+          min-height: 100vh;
+          max-width: 960px;
           margin: auto;
           display: flex;
           justify-content: space-around;
           align-items: center;
-          flex-wrap: wrap;
+          flex-wrap: wrap-reverse;
         }
       `}</style>
     </>

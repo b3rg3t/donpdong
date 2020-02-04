@@ -1,7 +1,20 @@
-
 export const imageData = [
   {
     name: "Where does yoga come from",
+    pic: "",
+    smallPic: "./images/yoga1.jpg",
+    position: "left",
+    alt: "Cat behind bars",
+    overlayColor: "",
+    opacity: "",
+    descripion:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?",
+    author: "James Cameron",
+    fulltext:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?"
+  },
+  {
+    name: "Ashtangayoga",
     pic: "./images/yoga4.jpg",
     smallPic: "./images/yoga2.jpg",
     position: "right",
@@ -16,7 +29,7 @@ export const imageData = [
       "Lorem, ipsum dolor tetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda ar"
   },
   {
-    name: "Vinyasa yoga",
+    name: "Vinyasayoga",
     pic: "",
     smallPic: "./images/yoga3.jpg",
     position: "left",
@@ -27,10 +40,10 @@ export const imageData = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?",
     author: "James Cameron",
     fulltext:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?"
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit"
   },
   {
-    name: "Acrobatic yoga",
+    name: "Acrobaticyoga",
     pic: "../images/yoga2.jpg",
     smallPic: "./images/yoga4.jpg",
     position: "right",
@@ -42,13 +55,13 @@ export const imageData = [
     time: "5 minutes",
     author: "James Cameron",
     fulltext:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?"
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae,"
   }
 ];
 
 export const profileData = [
   {
-    name: "Greta Thunberg",
+    name: "Vickan",
     pic: "./images/yoga1.jpg",
     smallPic: "./images/profil.jpg",
     position: "left",

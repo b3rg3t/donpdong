@@ -22,9 +22,9 @@ const About: React.FunctionComponent = () => {
   return (
     <Layout title={`${SEOdata.title} | About`}>
       <h1>This is About page ✌</h1>
-      <PostLink title="Hello Next.js" />
-      <PostLink title="Learn Next.js is awesome" />
-      <PostLink title="Deploy apps with Zeit" />
+      <PostLink title="Hello Yoga" />
+      <PostLink title="Learn Yoga is awesome" />
+      <PostLink title="Deploy Yoga" />
       <AmpStyling />
     </Layout>
   );

@@ -4,6 +4,7 @@ import heights from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
 import { colors } from "../../helpers/helpdata";
 import { SEOdata } from "../../helpers/helpdata";
+import { GiEarthAfricaEurope } from "react-icons/gi";
 
 const Navigation = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -13,7 +14,10 @@ const Navigation = (): React.ReactElement => {
         <nav style={{ height: `${heights.navHeigt}` }}>
           <div className="nav__boxes">
             <Link href={isAmp ? `/?amp=1` : `/`}>
-              <a>{SEOdata.title.toUpperCase()}</a>
+              <a>
+                <GiEarthAfricaEurope color="gray" size="3rem" />
+                {SEOdata.title.toUpperCase()}
+              </a>
             </Link>
           </div>
           <div className="nav__boxes"></div>
@@ -45,7 +49,16 @@ const Navigation = (): React.ReactElement => {
             box-shadow: 0 8px 6px -6px ${colors.lightgray};
           }
           nav a {
+            display: flex;
+            align-items: center;
             padding: 0.5rem;
+          }
+          nav a:hover {
+            color: ${colors.secondary};
+          }
+          nav a:focus {
+            outline: none;
+            color: ${colors.secondary}
           }
           .nav__boxes {
             flex: 1;
