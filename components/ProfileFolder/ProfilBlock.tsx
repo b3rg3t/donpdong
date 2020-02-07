@@ -8,6 +8,7 @@ const ProfilBlock = (): React.ReactElement => {
   return profileData ? (
     <>
       <section
+        id="about"
         className="profile-block"
         style={{
           backgroundImage: `url(${profileData[0].pic})`,
@@ -109,7 +110,7 @@ const ProfilBlock = (): React.ReactElement => {
             height: 200px;
             width: 200px;
           }
-          .profile-block__content__boxes__img{
+          .profile-block__content__boxes__img {
             padding: 2rem 0;
           }
         }

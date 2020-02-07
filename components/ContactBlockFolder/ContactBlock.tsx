@@ -9,6 +9,7 @@ const ContactBlock = (): React.ReactElement => {
   return (
     <>
       <section
+      id="contact"
         className="contact-block"
         style={{
           backgroundImage: `url(./images/yoga1.jpg)`,

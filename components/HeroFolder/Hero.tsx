@@ -6,6 +6,7 @@ const FirstComponent = (): React.ReactElement => {
   return (
     <>
       <section
+        id="hero"
         className="hero"
         style={{
           // - ${heights.navHeigt}
@@ -51,7 +52,7 @@ const FirstComponent = (): React.ReactElement => {
           position: absolute;
           background: rgb(253, 253, 253);
         }
-        .hero__content{
+        .hero__content {
           max-width: 960px;
           z-index: 2;
         }

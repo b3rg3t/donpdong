@@ -22,6 +22,7 @@ const AmpStyling = (): React.ReactElement => {
 
       /* Track */
       ::-webkit-scrollbar-track {
+        border-left: 1px solid rgb(218, 155, 155, 0.5);
       }
 
       /* Handle */
@@ -78,7 +79,7 @@ const AmpStyling = (): React.ReactElement => {
       }
       button {
         height: 40px;
-        width: 120px;
+        width: 160px;
         margin: auto;
         font-weight: 700;
         font-size: 1rem;
@@ -99,6 +100,7 @@ const AmpStyling = (): React.ReactElement => {
         border-radius: 30px;
       }
       button:disabled {
+        cursor: not-allowed;
         background-color: ${colors.lightgray};
         border: 1px solid ${colors.lightgray};
       }

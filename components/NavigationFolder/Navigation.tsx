@@ -1,19 +1,19 @@
 import React from "react";
 import Link from "next/link";
 import heights from "../../helpers/helpdata";
-import { useAmp } from "next/amp";
+// import { useAmp } from "next/amp";
 import { colors } from "../../helpers/helpdata";
 import { SEOdata } from "../../helpers/helpdata";
 import { GiEarthAfricaEurope } from "react-icons/gi";
 
 const Navigation = (): React.ReactElement => {
-  const isAmp = useAmp();
+  // const isAmp = useAmp();
   return (
     <>
       <header>
         <nav style={{ height: `${heights.navHeigt}` }}>
           <div className="nav__boxes">
-            <Link href={isAmp ? `/?amp=1` : `/`}>
+            <Link href={`#hero`}>
               <a>
                 <GiEarthAfricaEurope color="gray" size="3rem" />
                 {SEOdata.title.toUpperCase()}
@@ -22,11 +22,14 @@ const Navigation = (): React.ReactElement => {
           </div>
           <div className="nav__boxes"></div>
           <div className="nav__boxes">
-            <Link href="/">
-              <a>Home</a>
+            <Link href="#about">
+              <a>Om</a>
             </Link>
-            <Link href="/about">
-              <a>About</a>
+            <Link href="#articles">
+              <a>Artiklar</a>
+            </Link>
+            <Link href="#contact">
+              <a>Kontakt</a>
             </Link>
           </div>
         </nav>
@@ -43,7 +46,7 @@ const Navigation = (): React.ReactElement => {
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 10;
+            z-index: 1000;
             -webkit-box-shadow: 0 8px 6px -6px ${colors.lightgray};
             -moz-box-shadow: 0 8px 6px -6px ${colors.lightgray};
             box-shadow: 0 8px 6px -6px ${colors.lightgray};

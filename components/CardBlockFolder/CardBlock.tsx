@@ -66,11 +66,13 @@ const CardBlock = (): React.ReactElement => {
         .cards {
           min-height: 100vh;
           display: flex;
+          justify-content: center;
+          align-items: center;
         }
         .cards__block {
           padding: 0 1rem;
           display: flex;
-          width: 100%;
+          max-width: 1080px;
           flex-wrap: wrap;
           justify-content: center;
           align-items: center;

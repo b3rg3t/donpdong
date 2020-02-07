@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
 import Hero from "../components/HeroFolder/Hero";
 import ImageBlock from "../components/ImageBlockFolder/ImageBlock";
-import LazyLoad from "react-lazyload";
+// import LazyLoad from "react-lazyload";
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
 import CardBlock from "../components/CardBlockFolder/CardBlock";
 import { useAmp } from "next/amp";
@@ -22,18 +22,12 @@ const Index: React.FunctionComponent = () => {
         <>
           <Hero />
           <CardBlock />
-          <LazyLoad height={200}>
-            <ProfilBlock />
-          </LazyLoad>
-          <LazyLoad height={200}>
-            <ImageBlock />
-          </LazyLoad>
-          <LazyLoad height={200}>
-            <Courses />
-          </LazyLoad>
-          <LazyLoad height={200}>
-            <ContactBlock />
-          </LazyLoad>
+          <ProfilBlock />
+          <ImageBlock />
+          {/* <LazyLoad height={200}> */}
+          {/* </LazyLoad> */}
+          <Courses />
+          <ContactBlock />
           <AmpStyling />
         </>
       ) : (

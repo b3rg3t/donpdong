@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "../AMP/AmpImage";
 import { useAmp } from "next/amp";
+import { courseData } from "../dummyData";
+import { colors } from "../../helpers/helpdata";
+import DateBox from "../DateFolder/Date";
 
 const Courses = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -10,81 +13,42 @@ const Courses = (): React.ReactElement => {
         <div className="cards__b">
           <h2>Kurser</h2>
           <div className="cards__block">
-            <article className="cards__panels">
-              <div className="card__panels__div">
-                <div className="card__panels__div__img">
-                  <Image
-                    src="./images/yoga1.jpg"
-                    width="800"
-                    height="600"
-                    alt="hello"
-                    layout="intrinsic"
-                  />
-                </div>
-              </div>
-              <div className="card__panels__div text">
-                <div className="card__panels__div__header">
-                  <h3>Yoga kurs 1</h3>
-                  <span>Platser 20</span>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis vel reiciendis corporis pariatur adipisci illo quis
-                  explicabo ex aperiam suscipit.
-                </p>
-                <button>Boka</button>
-              </div>
-            </article>
-            <article className="cards__panels">
-              <div className="card__panels__div">
-                <div className="card__panels__div__img">
-                  <Image
-                    src="./images/yoga2.jpg"
-                    width="800"
-                    height="600"
-                    alt="hello"
-                    layout="intrinsic"
-                  />
-                </div>
-              </div>
-              <div className="card__panels__div text">
-                <div className="card__panels__div__header">
-                  <h3>Yoga kurs 2</h3>
-                  <span>Platser 20</span>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis vel reiciendis corporis pariatur adipisci illo quis
-                  explicabo ex aperiam suscipit.
-                </p>
-                <button>Boka</button>
-              </div>
-            </article>
-            <article className="cards__panels">
-              <div className="card__panels__div">
-                <div className="card__panels__div__img">
-                  <Image
-                    src="./images/yoga3.jpg"
-                    width={isAmp ? "800" : "100%"}
-                    height={isAmp ? "600" : "auto"}
-                    alt="hello"
-                    layout="intrinsic"
-                  />
-                </div>
-              </div>
-              <div className="card__panels__div text">
-                <div className="card__panels__div__header">
-                  <h3>Yoga kurs 3</h3>
-                  <span>Platser 20</span>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis vel reiciendis corporis pariatur adipisci illo quis
-                  explicabo ex aperiam suscipit.
-                </p>
-                <button>Boka</button>
-              </div>
-            </article>
+            {courseData &&
+              courseData.map(block => (
+                <article className="cards__panels">
+                  <div className="card__panels__div">
+                    <div className="card__panels__div__img">
+                      <Image
+                        src={block.pic}
+                        width={isAmp ? "800" : "450"}
+                        height={isAmp ? "600" : "auto"}
+                        alt={block.alt}
+                        layout="intrinsic"
+                      />
+                    </div>
+                  </div>
+                  <div className="card__panels__div text">
+                    <div className="card__panels__div__header">
+                      <div className="card__panels__div__header__box">
+                        <h3>{block.name.substring(0, 20)}</h3>
+                        <span>{`Antal platser: ${block.spots ? block.spots : "0"}`}</span>
+                        <span>{`Plats: ${block.location ? block.location : "Okänd"}`}</span>
+                      </div>
+                      <div className="date">
+                        <DateBox
+                          month={block.date.month}
+                          number={block.date.number}
+                          day={block.date.day}
+                        />
+                      </div>
+                    </div>
+                    <div className="textP">
+                      <p>{block.fulltext.substring(0, 180)}</p>
+                    </div>
+                    <button disabled={!block.buttonActive && true}>{block.buttonText ? block.buttonText : "Se tillgänglighet"}</button>
+                  </div>
+                </article>
+              ))}
           </div>
         </div>
       </section>
@@ -101,11 +65,9 @@ const Courses = (): React.ReactElement => {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          width: 100%;
           margin: 2rem 0;
-        }
-        img {
-          object-fit: contain;
-          height: auto;
+          max-width: 1200px;
         }
         .cards__block {
           padding: 0 1rem;
@@ -119,8 +81,16 @@ const Courses = (): React.ReactElement => {
           display: flex;
           justify-content: center;
           align-items: center;
-          max-height: 230px;
+          background-color: lightgray;
+          min-height: 220px;
+          max-height: 220px;
+          position: relative;
           overflow: hidden;
+        }
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: cover;
         }
         .cards__panels {
           margin: 1rem;
@@ -128,7 +98,7 @@ const Courses = (): React.ReactElement => {
           justify-self: center;
           align-self: center;
           background: #f9f9f9;
-          max-width: 400px;
+          max-width: 350px;
           justify-content: center;
           align-items: center;
           overflow: hidden;
@@ -151,14 +121,25 @@ const Courses = (): React.ReactElement => {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          border-bottom: 1px solid lightgray;
+          padding-bottom: 0.5rem;
+        }
+        .card__panels__div__header__box{
+          display: flex;
+          flex-direction: column;
+        }
+        .card__panels__div__header__box span{
+          font-size: 0.8rem;
         }
         .text {
           display: flex;
           flex-direction: column;
           padding: 1rem;
+          
         }
-        .text p {
-          padding: 1rem 0 2rem 0;
+        .textP {
+          padding: 1rem 0 1rem 0;
+          min-height: 120px;
         }
       `}</style>
     </>

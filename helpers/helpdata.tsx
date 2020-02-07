@@ -17,7 +17,7 @@ export const font = {
 export const colors = {
   primary: "rgb(126, 38, 38)", //text-color
   third: "rgb(61, 61, 61)", //darkpink ish
-  secondary: "rgb(218, 155, 155)", //lightpink ish
+  secondary: "rgb(204, 124, 124)", //lightpink ish
   lightgray: "lightgray",
   white: "white",
   color6: "#f9f9f9", //Contact & Cardblock
