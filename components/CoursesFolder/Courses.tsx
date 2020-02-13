@@ -9,13 +9,13 @@ const Courses = (): React.ReactElement => {
   const isAmp = useAmp();
   return (
     <>
-      <section className="cards">
+      <section id="courses" className="cards">
         <div className="cards__b">
           <h2>Kurser</h2>
           <div className="cards__block">
             {courseData &&
-              courseData.map(block => (
-                <article className="cards__panels">
+              courseData.map((block, index) => (
+                <article key={index} className="cards__panels">
                   <div className="card__panels__div">
                     <div className="card__panels__div__img">
                       <Image

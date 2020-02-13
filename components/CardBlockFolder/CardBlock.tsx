@@ -4,7 +4,7 @@ import { GiCaduceus, GiOlive, GiAllSeeingEye } from "react-icons/gi";
 const CardBlock = (): React.ReactElement => {
   return (
     <>
-      <section className="cards">
+      <section id="cards" className="cards">
         <div className="cards__block">
           <article className="cards__panels">
             <div className="card__panels__div">

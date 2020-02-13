@@ -25,8 +25,14 @@ const Navigation = (): React.ReactElement => {
             <Link href="#about">
               <a>Om</a>
             </Link>
+            <Link href="#cards">
+              <a>Yoga</a>
+            </Link>
             <Link href="#articles">
               <a>Artiklar</a>
+            </Link>
+            <Link href="#courses">
+              <a>Kurser</a>
             </Link>
             <Link href="#contact">
               <a>Kontakt</a>
@@ -61,7 +67,7 @@ const Navigation = (): React.ReactElement => {
           }
           nav a:focus {
             outline: none;
-            color: ${colors.secondary}
+            color: ${colors.secondary};
           }
           .nav__boxes {
             flex: 1;
