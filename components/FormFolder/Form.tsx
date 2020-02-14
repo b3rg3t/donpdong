@@ -104,7 +104,7 @@ const Form = (): React.ReactElement => {
               )}
             </div>
             <button
-              className="contact__form__button"
+              className="contact__form__button main-btn"
               type="submit"
               value="Submit"
               disabled={!isAmp ? (loading ? isDisabled : !isDisabled) : null}

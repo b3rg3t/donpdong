@@ -55,6 +55,7 @@ const Footer = (): React.ReactElement => {
           z-index: 10;
         }
         footer a {
+          transition: all 0.5s ease;
           font-size: 2rem;
           padding: 0.5rem 0.5rem 0 0.5rem;
           color: ${colors.secondary};

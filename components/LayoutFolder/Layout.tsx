@@ -21,6 +21,11 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => (
         custom-element="amp-iframe"
         src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"
       ></script>
+      <script
+        async
+        custom-element="amp-sidebar"
+        src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+      ></script>
     </Head>
     <Navigation />
     <main className="site-content">{children}</main>

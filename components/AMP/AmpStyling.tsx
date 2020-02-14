@@ -77,7 +77,8 @@ const AmpStyling = (): React.ReactElement => {
       li {
         list-style: none;
       }
-      button {
+      .main-btn {
+        transition: all 0.5s ease;
         height: 40px;
         width: 160px;
         margin: auto;
@@ -90,16 +91,16 @@ const AmpStyling = (): React.ReactElement => {
         padding: 0.5rem 1rem;
         cursor: pointer;
       }
-      button:hover {
+      .main-btn:hover {
         background: ${colors.primary};
         border: 1px solid ${colors.primary};
       }
-      button:focus {
+      .main-btn:focus {
         outline: none;
         border: 1px solid ${colors.primary};
         border-radius: 30px;
       }
-      button:disabled {
+      .main-btn:disabled {
         cursor: not-allowed;
         background-color: ${colors.lightgray};
         border: 1px solid ${colors.lightgray};
