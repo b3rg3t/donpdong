@@ -1,20 +1,25 @@
-import React from "react";
-import { imageData } from "../dummyData";
+import React, { useContext } from "react";
 import Image from "../AMP/AmpImage";
 // import { useAmp } from "next/amp";
-import { colors } from "../../helpers/helpdata";
+// import { colors } from "../../helpers/helpdata";
+import { DataContext } from "../../pages/index";
 
 const ImageBlock = (): React.ReactElement => {
   // const isAmp = useAmp();
-  return imageData ? (
+  const articles = useContext(DataContext);
+  
+  const articleData = articles.data.allArticles;
+
+  console.log(articleData);
+  return articleData ? (
     <>
       <section id="articles">
-        {imageData.map((img, index) => (
+        {articleData.map((img, index) => (
           <div
             key={index}
             className="image-block"
             style={{
-              backgroundImage: `url(${img.pic})`,
+              backgroundImage: `url(${img?.backgroundimg?.url})`,
               backgroundSize: "cover",
               backgroundPosition: "center center"
             }}
@@ -22,25 +27,25 @@ const ImageBlock = (): React.ReactElement => {
             <div
               className="image-block__layer"
               style={{
-                background: `${img.overlayColor}`,
-                opacity: `${img.opacity}`
+                background: `${img?.overlaycolor?.hex}`,
+                opacity: `${img?.opacity}`
               }}
             />
             <div className="image-block__content">
-              <div className={`image-block__content__boxes ${img.position}`}>
+              <div className={`image-block__content__boxes ${img.smallImagePosition ? "left" : ""}`}>
                 <div className="image-block__content__boxes__img">
                   <Image
-                    src={img.smallPic}
-                    alt={img.alt}
-                    width="800"
-                    height="500"
+                    src={img.smallimg.url}
+                    alt={img.smallimg.alt}
+                    width={img.smallimg.width}
+                    height={img.smallimg.height}
                     layout="intrinsic"
                   />
                 </div>
                 <div className="image-block__content__boxes__text">
-                  <h3>{img.name}</h3>
-                  <p className="text-top">{img.descripion}</p>
-                  <p className="text-bottom">{img.fulltext}</p>
+                  <h3>{img?.title}</h3>
+                  <p className="text-top">{img?.topText}</p>
+                  <p className="text-bottom">{img?.bottomText}</p>
                 </div>
               </div>
             </div>

@@ -1,7 +1,9 @@
 import React from "react";
 import { GiCaduceus, GiOlive, GiAllSeeingEye } from "react-icons/gi";
+import { useAmp } from "next/amp";
 
 const CardBlock = (): React.ReactElement => {
+  const isAmp = useAmp();
   return (
     <>
       <section id="cards" className="cards">
@@ -20,7 +22,7 @@ const CardBlock = (): React.ReactElement => {
               dolorum molestias dicta!
             </div>
             <div className="card__panels__div">
-              <button>Läs mer</button>
+              <button className="main-btn">Läs mer</button>
             </div>
           </article>
           <div className="cards__panels">
@@ -37,7 +39,7 @@ const CardBlock = (): React.ReactElement => {
               dolorum molestias dicta!
             </div>
             <div className="card__panels__div">
-              <button>Läs mer</button>
+              <button className="main-btn">Läs mer</button>
             </div>
           </div>
           <div className="cards__panels">
@@ -57,7 +59,7 @@ const CardBlock = (): React.ReactElement => {
               nobis esse animi sequi totam dolorum molestias dicta!
             </div>
             <div className="card__panels__div">
-              <button>Läs mer</button>
+              <button className="main-btn">Läs mer</button>
             </div>
           </div>
         </div>
@@ -68,6 +70,8 @@ const CardBlock = (): React.ReactElement => {
           display: flex;
           justify-content: center;
           align-items: center;
+          ${isAmp && "padding-top: 3rem;"}
+          ${isAmp && "padding-bottom: 3rem;"}
         }
         .cards__block {
           padding: 0 1rem;

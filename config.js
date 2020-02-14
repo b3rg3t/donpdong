@@ -19,6 +19,31 @@ export const body = JSON.stringify({
           image {
             alt
             url
+            height
+            width
+          }
+        },
+        allArticles {
+          id
+          bottomText
+          topText
+          title
+          smallImagePosition
+          opacity
+          backgroundimg {
+            height
+            width
+            alt
+            url
+          }
+          smallimg {
+            alt
+            height
+            width
+            url
+          }
+          overlaycolor {
+            hex
           }
         }
       }`

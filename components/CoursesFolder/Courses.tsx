@@ -33,8 +33,8 @@ const Courses = (): React.ReactElement => {
                     <div className="card__panels__div__img">
                       <Image
                         src={course.image.url}
-                        width={isAmp ? "800" : "450"}
-                        height={isAmp ? "600" : "auto"}
+                        width={isAmp ? `${course.image.width}` : `400`}
+                        height={isAmp ? `${course.image.height}` : "auto"}
                         alt={course.image.alt}
                         layout="intrinsic"
                       />
@@ -133,7 +133,7 @@ const Courses = (): React.ReactElement => {
           justify-content: center;
           align-items: center;
           background-color: lightgray;
-          min-height: 220px;
+          min-height: 200px;
           max-height: 220px;
           position: relative;
           overflow: hidden;

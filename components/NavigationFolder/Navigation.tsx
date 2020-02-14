@@ -1,16 +1,20 @@
 import React from "react";
 import Link from "next/link";
 import heights from "../../helpers/helpdata";
-// import { useAmp } from "next/amp";
+import { useAmp } from "next/amp";
 import { colors } from "../../helpers/helpdata";
 import { SEOdata } from "../../helpers/helpdata";
 import { GiEarthAfricaEurope } from "react-icons/gi";
+import AmpSidebar from "./AmpSidebar";
+import { FaBars } from "react-icons/fa";
+import { NONAME } from "dns";
 
 const Navigation = (): React.ReactElement => {
-  // const isAmp = useAmp();
+  const isAmp = useAmp();
   return (
     <>
       <header>
+        {isAmp && <AmpSidebar />}
         <nav style={{ height: `${heights.navHeigt}` }}>
           <div className="nav__boxes">
             <Link href={`#hero`}>
@@ -21,23 +25,43 @@ const Navigation = (): React.ReactElement => {
             </Link>
           </div>
           <div className="nav__boxes"></div>
-          <div className="nav__boxes">
-            <Link href="#cards">
-              <a>Yoga</a>
-            </Link>
-            <Link href="#about">
-              <a>Om</a>
-            </Link>
-            <Link href="#articles">
-              <a>Artiklar</a>
-            </Link>
-            <Link href="#courses">
-              <a>Kurser</a>
-            </Link>
-            <Link href="#contact">
-              <a>Kontakt</a>
-            </Link>
-          </div>
+          {isAmp ? (
+            <div className="nav__boxes amp-button">
+              <button
+                style={{
+                  border: "none",
+                  color: `${colors.secondary}`,
+                  background: "none",
+                  fontSize: "2rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center"
+                }}
+                className="hamburger"
+                on="tap:sidebar1.toggle"
+              >
+                <FaBars />
+              </button>
+            </div>
+          ) : (
+            <div className="nav__boxes">
+              <Link href="#cards">
+                <a>Yoga</a>
+              </Link>
+              <Link href="#about">
+                <a>Om</a>
+              </Link>
+              <Link href="#articles">
+                <a>Artiklar</a>
+              </Link>
+              <Link href="#courses">
+                <a>Kurser</a>
+              </Link>
+              <Link href="#contact">
+                <a>Kontakt</a>
+              </Link>
+            </div>
+          )}
         </nav>
       </header>
 
@@ -75,6 +99,10 @@ const Navigation = (): React.ReactElement => {
             display: flex;
             justify-content: center;
             align-items: center;
+          }
+          .amp-button{
+            justify-content: flex-end;
+            margin-right: 1rem;
           }
         `}
       </style>
