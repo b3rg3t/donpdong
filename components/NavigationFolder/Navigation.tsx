@@ -22,11 +22,11 @@ const Navigation = (): React.ReactElement => {
           </div>
           <div className="nav__boxes"></div>
           <div className="nav__boxes">
-            <Link href="#about">
-              <a>Om</a>
-            </Link>
             <Link href="#cards">
               <a>Yoga</a>
+            </Link>
+            <Link href="#about">
+              <a>Om</a>
             </Link>
             <Link href="#articles">
               <a>Artiklar</a>
@@ -58,6 +58,7 @@ const Navigation = (): React.ReactElement => {
             box-shadow: 0 8px 6px -6px ${colors.lightgray};
           }
           nav a {
+            transition: all 0.5s ease;
             display: flex;
             align-items: center;
             padding: 0.5rem;

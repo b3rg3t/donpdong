@@ -1,47 +1,50 @@
 import React from "react";
 
-import Layout from "../components/LayoutFolder/Layout";
-import Hero from "../components/HeroFolder/Hero";
-import ImageBlock from "../components/ImageBlockFolder/ImageBlock";
-// import LazyLoad from "react-lazyload";
-import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
-import CardBlock from "../components/CardBlockFolder/CardBlock";
-import { useAmp } from "next/amp";
-import AmpStyling from "../components/AMP/AmpStyling";
-import ContactBlock from "../components/ContactBlockFolder/ContactBlock";
-import { SEOdata } from "../helpers/helpdata";
-import Courses from "../components/CoursesFolder/Courses";
+import ComponentRenderer from "../components/componentRenderer";
+import { BASE_URL, headers, body } from "../config";
 
-export const config = { amp: "hybrid" };
+var fetch = require("isomorphic-unfetch");
 
-const Index: React.FunctionComponent = () => {
-  const isAmp = useAmp();
+interface Course {
+  id: string;
+  title: string;
+  spots: number;
+  date: string;
+  externalurl: string;
+  content: string;
+  location: string;
+  image?: { alt: string; title?: string; url: string };
+}
+interface CourseData {
+  data: { allCourses: Course[] };
+}
+export const DataContext = React.createContext<CourseData | null>(null);
+
+export const config = { amp: 'hybrid' };
+
+const Index: React.FunctionComponent = (props: any) => {
+  console.log(props.courses)
   return (
-    <Layout title={`${SEOdata.title} | Home`}>
-      {!isAmp ? (
-        <>
-          <Hero />
-          <CardBlock />
-          <ProfilBlock />
-          <ImageBlock />
-          {/* <LazyLoad height={200}> */}
-          {/* </LazyLoad> */}
-          <Courses />
-          <ContactBlock />
-          <AmpStyling />
-        </>
-      ) : (
-        <>
-          <Hero />
-          <CardBlock />
-          <ProfilBlock />
-          <ImageBlock />
-          <Courses />
-          <ContactBlock />
-          <AmpStyling />
-        </>
-      )}
-    </Layout>
+    <DataContext.Provider value={props.courses}>
+      <ComponentRenderer />
+    </DataContext.Provider>
   );
 };
+
+//@ts-ignore
+Index.getInitialProps = async (): Promise<{}> => {
+  let courses;
+  try {
+    courses = await fetch(BASE_URL, {
+      method: "POST",
+      headers,
+      body
+    });
+    courses = await courses.json();
+  } catch (error) {
+    console.error(error);
+  }
+  return { courses };
+};
+
 export default Index;

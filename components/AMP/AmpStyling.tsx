@@ -78,6 +78,7 @@ const AmpStyling = (): React.ReactElement => {
         list-style: none;
       }
       button {
+        transition: all 0.5s ease;
         height: 40px;
         width: 160px;
         margin: auto;

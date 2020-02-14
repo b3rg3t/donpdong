@@ -2,30 +2,23 @@ import React from "react";
 import { colors } from "../../helpers/helpdata";
 
 interface DateBoxProps {
-  month: string;
-  number: string;
-  day: string;
+  date: string;
 }
-const DateBox = ({ month, number, day }: DateBoxProps): React.ReactElement => {
+const DateBox = ({ date }: DateBoxProps): React.ReactElement => {
   return (
     <>
       <div className="date-box">
-        <div className="date-box__heading">
-          <h4>{month.toUpperCase().substring(0, 3)}</h4>
-        </div>
-        <div className="date-box__date">
-          <p>{number.substring(0, 2)}</p>
-          <p>{day.substring(0, 6)}</p>
-        </div>
+        <h4>Date:</h4>
+        <p><b>{date}</b></p>
       </div>
       <style jsx>{`
         .date-box {
+          height: 72px;
           font-size: 1rem;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          background-color: white;
+          justify-content: flex-end;
+          align-items: end;
           text-align: center;
         }
         .date-box__heading {

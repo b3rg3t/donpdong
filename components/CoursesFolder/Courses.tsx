@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "../AMP/AmpImage";
 import { useAmp } from "next/amp";
-import { courseData } from "../dummyData";
+// import { courseData } from "../dummyData";
 import { colors } from "../../helpers/helpdata";
 import DateBox from "../DateFolder/Date";
+import { DataContext } from "../../pages/index";
 
 const Courses = (): React.ReactElement => {
   const isAmp = useAmp();
+
+  const courses = useContext(DataContext);
+
+  const courseData = courses.data.allCourses;
+
+  // var dateObj = new Date();
+  // var month = dateObj.getUTCMonth() + 1; //months from 1-12
+  // var day = dateObj.getUTCDate();
+  // var year = dateObj.getUTCFullYear();
+
+  // let newdate = year + "/" + month + "/" + day;
+  // console.log(newdate);
   return (
     <>
       <section id="courses" className="cards">
@@ -14,15 +27,15 @@ const Courses = (): React.ReactElement => {
           <h2>Kurser</h2>
           <div className="cards__block">
             {courseData &&
-              courseData.map((block, index) => (
+              courseData.map((course, index) => (
                 <article key={index} className="cards__panels">
                   <div className="card__panels__div">
                     <div className="card__panels__div__img">
                       <Image
-                        src={block.pic}
+                        src={course.image.url}
                         width={isAmp ? "800" : "450"}
                         height={isAmp ? "600" : "auto"}
-                        alt={block.alt}
+                        alt={course.image.alt}
                         layout="intrinsic"
                       />
                     </div>
@@ -30,22 +43,29 @@ const Courses = (): React.ReactElement => {
                   <div className="card__panels__div text">
                     <div className="card__panels__div__header">
                       <div className="card__panels__div__header__box">
-                        <h3>{block.name.substring(0, 20)}</h3>
-                        <span>{`Antal platser: ${block.spots ? block.spots : "0"}`}</span>
-                        <span>{`Plats: ${block.location ? block.location : "Okänd"}`}</span>
+                        <h3>{course.title}</h3>
+                        <span>{`Antal platser: ${
+                          course.spots ? course.spots : "0"
+                        }`}</span>
+                        <span>{`Plats: ${
+                          course.location ? course.location : "Okänd"
+                        }`}</span>
                       </div>
                       <div className="date">
-                        <DateBox
-                          month={block.date.month}
-                          number={block.date.number}
-                          day={block.date.day}
-                        />
+                        <DateBox date={course.date} />
                       </div>
                     </div>
                     <div className="textP">
-                      <p>{block.fulltext.substring(0, 180)}</p>
+                      <p>{course.content}</p>
                     </div>
-                    <button disabled={!block.buttonActive && true}>{block.buttonText ? block.buttonText : "Se tillgänglighet"}</button>
+                    <a
+                      className="external-link"
+                      href={course.externalurl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Se tillgänglighet
+                    </a>
                   </div>
                 </article>
               ))}
@@ -59,6 +79,37 @@ const Courses = (): React.ReactElement => {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+        }
+        .external-link {
+          transition: all 0.5s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          width: 160px;
+          margin: auto;
+          font-weight: 700;
+          font-size: 1.2rem;
+          background-color: ${colors.secondary};
+          color: ${colors.white};
+          border-radius: 30px;
+          border: 1px solid ${colors.secondary};
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+        }
+        .external-link:hover {
+          background: ${colors.primary};
+          border: 1px solid ${colors.primary};
+        }
+        .external-link:focus {
+          outline: none;
+          border: 1px solid ${colors.primary};
+          border-radius: 30px;
+        }
+        .external-link:disabled {
+          cursor: not-allowed;
+          background-color: ${colors.lightgray};
+          border: 1px solid ${colors.lightgray};
         }
         .cards__b {
           display: flex;
@@ -124,18 +175,17 @@ const Courses = (): React.ReactElement => {
           border-bottom: 1px solid lightgray;
           padding-bottom: 0.5rem;
         }
-        .card__panels__div__header__box{
+        .card__panels__div__header__box {
           display: flex;
           flex-direction: column;
         }
-        .card__panels__div__header__box span{
+        .card__panels__div__header__box span {
           font-size: 0.8rem;
         }
         .text {
           display: flex;
           flex-direction: column;
           padding: 1rem;
-          
         }
         .textP {
           padding: 1rem 0 1rem 0;
