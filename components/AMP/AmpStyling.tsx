@@ -105,6 +105,37 @@ const AmpStyling = (): React.ReactElement => {
         background-color: ${colors.lightgray};
         border: 1px solid ${colors.lightgray};
       }
+      .external-link {
+        transition: all 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 160px;
+        margin: auto;
+        font-weight: 700;
+        font-size: 1.2rem;
+        background-color: ${colors.secondary};
+        color: ${colors.white};
+        border-radius: 30px;
+        border: 1px solid ${colors.secondary};
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+      }
+      .external-link:hover {
+        background: ${colors.primary};
+        border: 1px solid ${colors.primary};
+      }
+      .external-link:focus {
+        outline: none;
+        border: 1px solid ${colors.primary};
+        border-radius: 30px;
+      }
+      .external-link:disabled {
+        cursor: not-allowed;
+        background-color: ${colors.lightgray};
+        border: 1px solid ${colors.lightgray};
+      }
     `}</style>
   );
 };
