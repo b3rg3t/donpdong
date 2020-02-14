@@ -124,7 +124,7 @@ const Form = (): React.ReactElement => {
             margin: 1rem 0;
           }
           .contact h3 {
-            margin: 2rem 0;
+            margin: 1rem 0 2rem 0;
             text-align: center;
           }
           .contact__form__div {
