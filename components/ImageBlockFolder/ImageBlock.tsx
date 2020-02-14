@@ -7,7 +7,7 @@ import { DataContext } from "../../pages/index";
 const ImageBlock = (): React.ReactElement => {
   // const isAmp = useAmp();
   const articles = useContext(DataContext);
-  
+
   const articleData = articles.data.allArticles;
 
   console.log(articleData);
@@ -32,7 +32,11 @@ const ImageBlock = (): React.ReactElement => {
               }}
             />
             <div className="image-block__content">
-              <div className={`image-block__content__boxes ${img.smallImagePosition ? "left" : ""}`}>
+              <div
+                className={`image-block__content__boxes ${
+                  img.smallImagePosition ? "left" : ""
+                }`}
+              >
                 <div className="image-block__content__boxes__img">
                   <Image
                     src={img.smallimg.url}
@@ -44,8 +48,8 @@ const ImageBlock = (): React.ReactElement => {
                 </div>
                 <div className="image-block__content__boxes__text">
                   <h3>{img?.title}</h3>
-                  <p className="text-top">{img?.topText}</p>
-                  <p className="text-bottom">{img?.bottomText}</p>
+                  {img.topText && <p className="text-top">{img.topText}</p>}
+                  {img.bottomText && <p className="text-bottom">{img.bottomText}</p>}
                 </div>
               </div>
             </div>

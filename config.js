@@ -8,7 +8,7 @@ export const headers = {
 
 export const body = JSON.stringify({
   query: `query GetAllCourses {
-        allCourses {
+        allCourses(orderBy: date_ASC) {
           id
           title
           spots

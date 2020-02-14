@@ -13,13 +13,6 @@ const Courses = (): React.ReactElement => {
 
   const courseData = courses.data.allCourses;
 
-  // var dateObj = new Date();
-  // var month = dateObj.getUTCMonth() + 1; //months from 1-12
-  // var day = dateObj.getUTCDate();
-  // var year = dateObj.getUTCFullYear();
-
-  // let newdate = year + "/" + month + "/" + day;
-  // console.log(newdate);
   return (
     <>
       <section id="courses" className="cards">
@@ -132,7 +125,7 @@ const Courses = (): React.ReactElement => {
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: lightgray;
+          background-color: #e7e7e7;
           min-height: 200px;
           max-height: 220px;
           position: relative;

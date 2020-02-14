@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import heights from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
-import { colors } from "../../helpers/helpdata";
-import { SEOdata } from "../../helpers/helpdata";
-import { GiEarthAfricaEurope } from "react-icons/gi";
+import heights,{ colors, SEOdata } from "../../helpers/helpdata";
+
 import AmpSidebar from "./AmpSidebar";
+
+import { GiEarthAfricaEurope } from "react-icons/gi";
 import { FaBars } from "react-icons/fa";
-import { NONAME } from "dns";
+
 
 const Navigation = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -40,6 +40,7 @@ const Navigation = (): React.ReactElement => {
                 className="hamburger"
                 on="tap:sidebar1.toggle"
               >
+                <span aria-label="Toggle Navigation" />
                 <FaBars />
               </button>
             </div>
@@ -64,7 +65,6 @@ const Navigation = (): React.ReactElement => {
           )}
         </nav>
       </header>
-
       <style jsx>
         {`
           nav {
