@@ -9,11 +9,13 @@ export const contactBlockStyle = {
   width: "400px"
 };
 
+//font for page
 export const font = {
   fontFamily: `"Dosis", sans-serif`,
   url: `https://fonts.googleapis.com/css?family=Dosis&display=swap`
 };
 
+//colors for page
 export const colors = {
   primary: "rgb(126, 38, 38)", //text-color
   third: "rgb(61, 61, 61)", //darkpink ish
@@ -25,6 +27,7 @@ export const colors = {
   navbar: "rgba(255, 237, 237)"
 };
 
+//Seo data
 export const SEOdata = {
   title: "VickanYoga",
   description: "This is a webpage about Yoga",
@@ -33,6 +36,7 @@ export const SEOdata = {
   name: "Yoga"
 };
 
+//Social Media links
 export const SocialMedia = {
   instagram: {
     url: "https://www.instagram.com/",
@@ -47,3 +51,32 @@ export const SocialMedia = {
     title: "LinkedIn"
   }
 };
+
+//Links to page
+export const Links = [
+    {
+        href: "#cards",
+        title: "Yoga",
+        url: ""
+    },
+    {
+        href: "#about",
+        title: "Om",
+        url: ""
+    },
+    {
+        href: "#articles",
+        title: "Artiklar",
+        url: ""
+    },
+    {
+        href: "#courses",
+        title: "Kurser",
+        url: ""
+    },
+    {
+        href: "#contact",
+        title: "Kontakt",
+        url: ""
+    }
+]

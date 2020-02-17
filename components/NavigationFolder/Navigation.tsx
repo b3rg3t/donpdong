@@ -1,16 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { useAmp } from "next/amp";
-import heights,{ colors, SEOdata } from "../../helpers/helpdata";
+import heights, { colors, SEOdata, Links } from "../../helpers/helpdata";
 
 import AmpSidebar from "./AmpSidebar";
 
 import { GiEarthAfricaEurope } from "react-icons/gi";
 import { FaBars } from "react-icons/fa";
 
-
 const Navigation = (): React.ReactElement => {
-  
   const isAmp = useAmp();
 
   return (
@@ -48,21 +46,16 @@ const Navigation = (): React.ReactElement => {
             </div>
           ) : (
             <div className="nav__boxes">
-              <Link href="#cards">
-                <a>Yoga</a>
-              </Link>
-              <Link href="#about">
-                <a>Om</a>
-              </Link>
-              <Link href="#articles">
-                <a>Artiklar</a>
-              </Link>
-              <Link href="#courses">
-                <a>Kurser</a>
-              </Link>
-              <Link href="#contact">
-                <a>Kontakt</a>
-              </Link>
+              <ul className="nav__boxes">
+                {Links &&
+                  Links.map(link => (
+                    <li>
+                      <Link href={link.href}>
+                        <a>{link.title}</a>
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
             </div>
           )}
         </nav>
@@ -102,7 +95,7 @@ const Navigation = (): React.ReactElement => {
             justify-content: center;
             align-items: center;
           }
-          .amp-button{
+          .amp-button {
             justify-content: flex-end;
             margin-right: 1rem;
           }
