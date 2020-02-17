@@ -10,7 +10,9 @@ import { FaBars } from "react-icons/fa";
 
 
 const Navigation = (): React.ReactElement => {
+  
   const isAmp = useAmp();
+
   return (
     <>
       <header>

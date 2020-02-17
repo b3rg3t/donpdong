@@ -10,7 +10,6 @@ const Loading = ({ loading }: LoadingProps): React.ReactElement => {
       <PulseLoader color={"rgb(126, 38, 38)"} loading={loading} width={"80px"} height={"0.5rem"} />
     </div>
   );
-  //   }
 };
 
 export default Loading;

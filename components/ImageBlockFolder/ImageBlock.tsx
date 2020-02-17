@@ -3,15 +3,16 @@ import Image from "../AMP/AmpImage";
 // import { useAmp } from "next/amp";
 // import { colors } from "../../helpers/helpdata";
 import { DataContext } from "../../pages/index";
+import Loading from "../loading";
 
 const ImageBlock = (): React.ReactElement => {
   // const isAmp = useAmp();
   const articles = useContext(DataContext);
 
-  const articleData = articles.data.allArticles;
+  const articleData = articles?.data?.allArticles;
 
   console.log(articleData);
-  return articleData ? (
+  return articleData?.length > 0 ? (
     <>
       <section id="articles">
         {articleData.map((img, index) => (
@@ -47,9 +48,18 @@ const ImageBlock = (): React.ReactElement => {
                   />
                 </div>
                 <div className="image-block__content__boxes__text">
-                  <h3>{img?.title}</h3>
-                  {img.topText && <p className="text-top">{img.topText}</p>}
-                  {img.bottomText && <p className="text-bottom">{img.bottomText}</p>}
+                  <div>
+                    <h3>{img?.title}</h3>
+                    {img.topText && <p className="text-top">{img.topText}</p>}
+                    {img.bottomText && (
+                      <p className="text-bottom">{img.bottomText}</p>
+                    )}
+                  </div>
+                  <div className="button-container">
+                    <a className="external-link" href="#courses">
+                      Kurser
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -100,8 +110,16 @@ const ImageBlock = (): React.ReactElement => {
                 object-fit: cover;
               }
               .image-block__content__boxes__text {
+                min-height: 350px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 flex: 1 1 500px;
-                padding: 0 2rem 2rem 2rem;
+                padding: 0 2rem 0 2rem;
+              }
+              .button-container {
+                display: flex;
+                justify-content: center;
               }
               .text-top {
                 padding-bottom: 1rem;
@@ -110,13 +128,32 @@ const ImageBlock = (): React.ReactElement => {
               .text-bottom {
                 font-weight: 500;
               }
+              @media only screen and (max-width: 910px) {
+                .button-container {
+                  margin: 2rem 0;
+                }
+                .image-block__content__boxes__text {
+                  min-height: 100px;
+                }
+              }
             `}</style>
           </div>
         ))}
       </section>
     </>
   ) : (
-    <h5>Loading..</h5>
+    <div
+    style={{
+      minHeight: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: "column",
+      alignItems: "center"
+    }}
+  >
+      <span>Loading..</span>
+      <Loading loading={true} />
+    </div>
   );
 };
 

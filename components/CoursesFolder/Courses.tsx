@@ -5,15 +5,16 @@ import { useAmp } from "next/amp";
 import { colors } from "../../helpers/helpdata";
 import DateBox from "../DateFolder/Date";
 import { DataContext } from "../../pages/index";
+import Loading from "../loading";
 
 const Courses = (): React.ReactElement => {
   const isAmp = useAmp();
 
   const courses = useContext(DataContext);
 
-  const courseData = courses.data.allCourses;
+  const courseData = courses?.data?.allCourses;
 
-  return (
+  return courseData?.length > 0 ? (
     <>
       <section id="courses" className="cards">
         <div className="cards__b">
@@ -72,37 +73,6 @@ const Courses = (): React.ReactElement => {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-        }
-        .external-link {
-          transition: all 0.5s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 40px;
-          width: 160px;
-          margin: auto;
-          font-weight: 700;
-          font-size: 1.2rem;
-          background-color: ${colors.secondary};
-          color: ${colors.white};
-          border-radius: 30px;
-          border: 1px solid ${colors.secondary};
-          padding: 0.5rem 1rem;
-          cursor: pointer;
-        }
-        .external-link:hover {
-          background: ${colors.primary};
-          border: 1px solid ${colors.primary};
-        }
-        .external-link:focus {
-          outline: none;
-          border: 1px solid ${colors.primary};
-          border-radius: 30px;
-        }
-        .external-link:disabled {
-          cursor: not-allowed;
-          background-color: ${colors.lightgray};
-          border: 1px solid ${colors.lightgray};
         }
         .cards__b {
           display: flex;
@@ -186,6 +156,19 @@ const Courses = (): React.ReactElement => {
         }
       `}</style>
     </>
+  ) : (
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center"
+      }}
+    >
+      <span>Loading..</span>
+      <Loading loading={true} />
+    </div>
   );
 };
 
