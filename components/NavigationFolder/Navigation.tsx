@@ -48,8 +48,8 @@ const Navigation = (): React.ReactElement => {
             <div className="nav__boxes">
               <ul className="nav__boxes">
                 {Links &&
-                  Links.map(link => (
-                    <li>
+                  Links.map((link, index) => (
+                    <li key={index}>
                       <Link href={link.href}>
                         <a>{link.title}</a>
                       </Link>

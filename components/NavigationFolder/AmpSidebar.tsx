@@ -21,8 +21,8 @@ const AmpSidebar = (): React.ReactElement => {
                     </a>
                   </Link>
                 </li>
-                {Links.map(link => (
-                  <li>
+                {Links.map((link, index) => (
+                  <li key={index}>
                     <Link href={link.href}>
                       <a>{link.title}</a>
                     </Link>
