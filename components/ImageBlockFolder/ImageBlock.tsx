@@ -151,7 +151,6 @@ const ImageBlock = (): React.ReactElement => {
       alignItems: "center"
     }}
   >
-      <span>Loading..</span>
       <Loading loading={true} />
     </div>
   );

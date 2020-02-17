@@ -35,6 +35,9 @@ const CardBlock = (): React.ReactElement => {
           </div>
         </section>
         <style jsx>{`
+          h3 {
+            margin: 2rem;
+          }
           .cards {
             min-height: 100vh;
             display: flex;
@@ -48,12 +51,11 @@ const CardBlock = (): React.ReactElement => {
             display: flex;
             max-width: 960px;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
           }
           .cards__panels {
-            margin-top: 1rem;
-            margin-right: 1rem;
+            margin: 0.5rem;
             flex: 1 1 300px;
             justify-self: center;
             align-self: center;
@@ -79,6 +81,11 @@ const CardBlock = (): React.ReactElement => {
           }
           ::-webkit-scrollbar-track {
             background: #f9f9f9;
+          }
+          @media only screen and (max-width: 960px) {
+            .cards {
+              padding-bottom: 2rem;
+            }
           }
         `}</style>
       </>
