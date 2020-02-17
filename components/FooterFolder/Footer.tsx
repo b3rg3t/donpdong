@@ -2,8 +2,8 @@ import React from "react";
 import heights from "../../helpers/helpdata";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 // import { useAmp } from "next/amp";
-import { colors } from "../../helpers/helpdata";
-import { SocialMedia } from "../../helpers/helpdata";
+import { colors, SocialMedia } from "../../helpers/helpdata";
+
 
 const Footer = (): React.ReactElement => {
   // const isAmp = useAmp();

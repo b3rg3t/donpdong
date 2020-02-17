@@ -5,15 +5,16 @@ import { useAmp } from "next/amp";
 import { colors } from "../../helpers/helpdata";
 import DateBox from "../DateFolder/Date";
 import { DataContext } from "../../pages/index";
+import Loading from "../loading";
 
 const Courses = (): React.ReactElement => {
   const isAmp = useAmp();
 
   const courses = useContext(DataContext);
 
-  const courseData = courses.data.allCourses;
+  const courseData = courses?.data?.allCourses;
 
-  return (
+  return courseData?.length > 0 ? (
     <>
       <section id="courses" className="cards">
         <div className="cards__b">
@@ -155,6 +156,19 @@ const Courses = (): React.ReactElement => {
         }
       `}</style>
     </>
+  ) : (
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center"
+      }}
+    >
+      <span>Loading..</span>
+      <Loading loading={true} />
+    </div>
   );
 };
 
