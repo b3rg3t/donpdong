@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Image from "../AMP/AmpImage";
 import { useAmp } from "next/amp";
 import DateBox from "../DateFolder/Date";
@@ -6,6 +6,7 @@ import { DataContext } from "../../pages/index";
 import Loading from "../loading";
 import * as moment from "moment";
 import "moment/locale/sv";
+import { colors } from "../../helpers/helpdata";
 
 const Courses = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -16,7 +17,7 @@ const Courses = (): React.ReactElement => {
 
   return courseData?.length > 0 ? (
     <>
-      <section id="courses" className="cards">
+      <div className="cards">
         <div className="cards__b">
           <h2>Kurser</h2>
           <div className="cards__block">
@@ -29,7 +30,7 @@ const Courses = (): React.ReactElement => {
                 let month = date.substring(7, 10).toUpperCase();
                 return (
                   <article key={index} className="cards__panels">
-                    <div className="card__panels__div">
+                    <div className="card__panels__div background">
                       <div className="card__panels__div__img">
                         <Image
                           src={course.image.url}
@@ -76,7 +77,7 @@ const Courses = (): React.ReactElement => {
               })}
           </div>
         </div>
-      </section>
+      </div>
       <style jsx>{`
         .cards {
           min-height: 100vh;
@@ -107,10 +108,13 @@ const Courses = (): React.ReactElement => {
           justify-content: center;
           align-items: center;
           background-color: #e7e7e7;
-          min-height: 200px;
-          max-height: 220px;
+          min-height: ${isAmp ? "" :  "200px"};
+          max-height: ${isAmp ? "175px" :  "220px"};
           position: relative;
           overflow: hidden;
+        }
+        .background {
+          background: ${colors.lightgray};
         }
         img {
           max-width: 100%;

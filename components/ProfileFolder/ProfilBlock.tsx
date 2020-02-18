@@ -2,13 +2,12 @@ import React from "react";
 import { profileData } from "../dummyData";
 import Loading from "../loading";
 import Image from "../AMP/AmpImage";
-import { colors } from "../../helpers/helpdata";
+// import { colors } from "../../helpers/helpdata";
 
 const ProfilBlock = (): React.ReactElement => {
   return profileData ? (
     <>
-      <section
-        id="about"
+      <div
         className="profile-block"
         style={{
           backgroundImage: `url(${profileData[0].pic})`,
@@ -43,9 +42,10 @@ const ProfilBlock = (): React.ReactElement => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
       <style jsx global>{`
         .profile-block {
+          transition: all 0.5s ease-in;
           min-height: 100vh;
           display: flex;
           justify-content: center;

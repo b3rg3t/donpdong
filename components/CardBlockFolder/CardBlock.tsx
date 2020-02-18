@@ -8,7 +8,7 @@ const CardBlock = (): React.ReactElement => {
   return (
     cardData && (
       <>
-        <section id="cards" className="cards">
+        <div className="cards">
           <h2>What is yoga?</h2>
           <div className="cards__block">
             {cardData.length > 0 &&
@@ -33,7 +33,7 @@ const CardBlock = (): React.ReactElement => {
                 </article>
               ))}
           </div>
-        </section>
+        </div>
         <style jsx>{`
           h2 {
             margin: 2rem;
