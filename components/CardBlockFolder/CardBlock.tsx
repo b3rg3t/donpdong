@@ -9,7 +9,7 @@ const CardBlock = (): React.ReactElement => {
     cardData && (
       <>
         <section id="cards" className="cards">
-          <h3>What is yoga?</h3>
+          <h2>What is yoga?</h2>
           <div className="cards__block">
             {cardData.length > 0 &&
               cardData.map((card, index) => (
@@ -35,7 +35,7 @@ const CardBlock = (): React.ReactElement => {
           </div>
         </section>
         <style jsx>{`
-          h3 {
+          h2 {
             margin: 2rem;
           }
           .cards {
@@ -49,13 +49,12 @@ const CardBlock = (): React.ReactElement => {
           }
           .cards__block {
             display: flex;
-            max-width: 960px;
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
           }
           .cards__panels {
-            margin: 0.5rem;
+            margin: 0 2rem;
             flex: 1 1 300px;
             justify-self: center;
             align-self: center;
@@ -84,7 +83,10 @@ const CardBlock = (): React.ReactElement => {
           }
           @media only screen and (max-width: 960px) {
             .cards {
-              padding-bottom: 2rem;
+              margin-bottom: 2rem;
+            }
+            .cards__panels {
+              margin-bottom: 2rem;
             }
           }
         `}</style>

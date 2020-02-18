@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Image from "../AMP/AmpImage";
 import { useAmp } from "next/amp";
-// import { courseData } from "../dummyData";
-import { colors } from "../../helpers/helpdata";
 import DateBox from "../DateFolder/Date";
 import { DataContext } from "../../pages/index";
 import Loading from "../loading";
+import * as moment from "moment";
+import "moment/locale/sv";
 
 const Courses = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -21,48 +21,59 @@ const Courses = (): React.ReactElement => {
           <h2>Kurser</h2>
           <div className="cards__block">
             {courseData &&
-              courseData.map((course, index) => (
-                <article key={index} className="cards__panels">
-                  <div className="card__panels__div">
-                    <div className="card__panels__div__img">
-                      <Image
-                        src={course.image.url}
-                        width={isAmp ? `${course.image.width}` : `400`}
-                        height={isAmp ? `${course.image.height}` : "auto"}
-                        alt={course.image.alt}
-                        layout="intrinsic"
-                      />
-                    </div>
-                  </div>
-                  <div className="card__panels__div text">
-                    <div className="card__panels__div__header">
-                      <div className="card__panels__div__header__box">
-                        <h3>{course.title}</h3>
-                        <span>{`Antal platser: ${
-                          course.spots ? course.spots : "0"
-                        }`}</span>
-                        <span>{`Plats: ${
-                          course.location ? course.location : "Okänd"
-                        }`}</span>
-                      </div>
-                      <div className="date">
-                        <DateBox date={course.date} />
+              courseData.map((course, index) => {
+                //@ts-ignore
+                let date = moment(course.date).format("llll");
+                let day = date.substring(0, 3).toUpperCase();
+                let number = date.substring(4, 6);
+                let month = date.substring(7, 10).toUpperCase();
+                return (
+                  <article key={index} className="cards__panels">
+                    <div className="card__panels__div">
+                      <div className="card__panels__div__img">
+                        <Image
+                          src={course.image.url}
+                          width={isAmp ? `${course.image.width}` : `auto`}
+                          height={isAmp ? `${course.image.height}` : "220"}
+                          alt={course.image.alt}
+                          layout="intrinsic"
+                        />
                       </div>
                     </div>
-                    <div className="textP">
-                      <p>{course.content}</p>
+                    <div className="card__panels__div text">
+                      <div className="card__panels__div__header">
+                        <div className="card__panels__div__header__box">
+                          <h3>{course.title}</h3>
+                          <span>{`Antal platser: ${
+                            course.spots ? course.spots : "0"
+                          }`}</span>
+                          <span>{`Plats: ${
+                            course.location ? course.location : "Okänd"
+                          }`}</span>
+                        </div>
+                        <div className="date">
+                          <DateBox
+                            month={month}
+                            number={number}
+                            day={day}
+                          />
+                        </div>
+                      </div>
+                      <div className="textP">
+                        <p>{course.content}</p>
+                      </div>
+                      <a
+                        className="external-link"
+                        href={course.externalurl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        Se tillgänglighet
+                      </a>
                     </div>
-                    <a
-                      className="external-link"
-                      href={course.externalurl}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Se tillgänglighet
-                    </a>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
           </div>
         </div>
       </section>

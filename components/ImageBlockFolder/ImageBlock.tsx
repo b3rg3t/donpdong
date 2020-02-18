@@ -11,7 +11,7 @@ const ImageBlock = (): React.ReactElement => {
 
   const articleData = articles?.data?.allArticles;
 
-  console.log(articleData);
+  // console.log(articleData);
   return articleData?.length > 0 ? (
     <>
       <section id="articles">
@@ -20,7 +20,7 @@ const ImageBlock = (): React.ReactElement => {
             key={index}
             className="image-block"
             style={{
-              backgroundImage: `url(${img?.backgroundimg?.url})`,
+              backgroundImage: img?.backgroundimg?.url && `url(${img?.backgroundimg?.url})`,
               backgroundSize: "cover",
               backgroundPosition: "center center"
             }}

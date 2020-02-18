@@ -54,9 +54,12 @@ export const DataContext = React.createContext<PageData | null>(null);
 export const config = { amp: "hybrid" };
 
 const Index: React.FunctionComponent = (props: any) => {
-  console.log(props.courses);
+  // console.log(props.response.data.allCourses[0].date);
+  //@ts-ignore
+// let now = moment(props.response.data.allCourses[0].date).format("LLLL");
+// console.log(now)
   return (
-    <DataContext.Provider value={props.courses}>
+    <DataContext.Provider value={props.response}>
       <ComponentRenderer />
     </DataContext.Provider>
   );
@@ -64,18 +67,18 @@ const Index: React.FunctionComponent = (props: any) => {
 
 //@ts-ignore
 Index.getInitialProps = async (): Promise<{}> => {
-  let courses;
+  let response;
   try {
-    courses = await fetch(BASE_URL, {
+    response = await fetch(BASE_URL, {
       method: "POST",
       headers,
       body
     });
-    courses = await courses.json();
+    response = await response.json();
   } catch (error) {
     console.error(error);
   }
-  return { courses };
+  return { response };
 };
 
 export default Index;
