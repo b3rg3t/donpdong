@@ -1,4 +1,5 @@
 import React from "react";
+import Video from "../AMP/AmpVideo";
 // import heights from "../../helpers/picturehelp";
 // import { colors } from "../AMP/AmpStyling";
 
@@ -11,12 +12,14 @@ const FirstComponent = (): React.ReactElement => {
         style={{
           // - ${heights.navHeigt}
           height: `calc(100vh )`,
-          backgroundImage: `url(./images/yogahero.jpg)`,
+          // backgroundImage: `url(./images/yogahero.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center center"
         }}
       >
-        <div className="hero__layer"></div>
+        <div className="hero__layer">
+          <Video  />
+        </div>
         <div className="hero__content">
           <div className="hero__box">
             <h1>Welcome to the world of Yoga</h1>
@@ -41,16 +44,19 @@ const FirstComponent = (): React.ReactElement => {
           text-align: center;
         }
         .hero__quote {
+          color: white;
           position: absolute;
           bottom: 1rem;
           right: 4rem;
         }
         .hero__layer {
-          opacity: 0.7;
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          background: rgb(253, 253, 253);
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          overflow: hidden;
+          z-index: -100;
         }
         .hero__content {
           max-width: 960px;
@@ -61,11 +67,13 @@ const FirstComponent = (): React.ReactElement => {
           height: 200px;
         }
         .hero p {
+          color: white;
           max-width: 70ch;
           z-index: 2;
           text-align: start;
         }
         .hero h1 {
+          color: white;
           z-index: 2;
           text-align: start;
         }
