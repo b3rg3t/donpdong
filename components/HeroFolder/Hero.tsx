@@ -5,8 +5,7 @@ import React from "react";
 const FirstComponent = (): React.ReactElement => {
   return (
     <>
-      <section
-        id="hero"
+      <div
         className="hero"
         style={{
           // - ${heights.navHeigt}
@@ -30,7 +29,7 @@ const FirstComponent = (): React.ReactElement => {
             </p>
           </div>
         </div>
-      </section>
+      </div>
       <style jsx>{`
         .hero {
           display: flex;

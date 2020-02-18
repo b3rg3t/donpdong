@@ -8,8 +8,7 @@ const ContactBlock = (): React.ReactElement => {
   //   const isAmp = useAmp();
   return (
     <>
-      <section
-      id="contact"
+      <div
         className="contact-block"
         style={{
           backgroundImage: `url(./images/yoga1.jpg)`,
@@ -29,7 +28,7 @@ const ContactBlock = (): React.ReactElement => {
           <MapContainer />
           <Form />
         </div>
-      </section>
+      </div>
       <style jsx>{`
         .contact-block {
           position: relative;
