@@ -53,7 +53,8 @@ const ComponentRenderer = (props: any): React.ReactElement => {
         </>
       ) : (
         <>
-          <section id="hero">
+          <CommentBlock />
+          {/* <section id="hero">
             <Hero />
           </section>
           <section id="cards">
@@ -70,7 +71,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
           </section>
           <section id="contact">
             <ContactBlock />
-          </section>
+          </section> */}
           <AmpStyling />
         </>
       )}

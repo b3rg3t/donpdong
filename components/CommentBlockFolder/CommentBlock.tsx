@@ -36,21 +36,18 @@ const data = [
 
 const CommentBlock = (): React.ReactElement => {
   const [comments, setComments] = useState(data);
-  const [move, setMove] = useState(false);
 
   const handleLeftClick = () => {
     let newArray = comments;
     let lastItem = newArray.pop();
     let updatedArray = [lastItem].concat(newArray);
     setComments(updatedArray);
-    setMove(true);
   };
   const handleRightClick = () => {
     let newArray = comments;
     let firstItem = newArray.shift();
     let updatedArray = newArray.concat([firstItem]);
     setComments(updatedArray);
-    setMove(false)
   };
   return (
     <>
@@ -89,8 +86,7 @@ const CommentBlock = (): React.ReactElement => {
       <style jsx>{`
         .comment-block {
           heigth: 100vh;
-          display: block;
-          background: url(/images/yoga1.jpg)
+          background: lightgray;
         }
         .comment-block__slider-container {
           margin: auto;
