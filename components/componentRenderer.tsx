@@ -12,6 +12,7 @@ import { SEOdata } from "../helpers/helpdata";
 import Courses from "../components/CoursesFolder/Courses";
 
 import { useAmp } from "next/amp";
+import CommentBlock from "./CommentBlockFolder/CommentBlock";
 
 const ComponentRenderer = (props: any): React.ReactElement => {
   const isAmp = useAmp();
@@ -19,7 +20,8 @@ const ComponentRenderer = (props: any): React.ReactElement => {
     <Layout title={`${SEOdata.title} | Home`}>
       {!isAmp ? (
         <>
-          <section id="hero">
+          <CommentBlock />
+          {/* <section id="hero">
             <Hero />
           </section>
           <section id="cards">
@@ -46,7 +48,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <LazyLoad height={200}>
               <ContactBlock />
             </LazyLoad>
-          </section>
+          </section> */}
           <AmpStyling />
         </>
       ) : (
