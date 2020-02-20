@@ -1,24 +1,27 @@
 import React from "react";
 import Video from "../AMP/AmpVideo";
-// import heights from "../../helpers/picturehelp";
+import heights from "../../helpers/helpdata";
 // import { colors } from "../AMP/AmpStyling";
+import { useAmp } from "next/amp";
+import { FaRegPlayCircle } from "react-icons/fa";
 
 const FirstComponent = (): React.ReactElement => {
+  const isAmp = useAmp();
   return (
     <>
       <div
         className="hero"
-        style={{
-          // - ${heights.navHeigt}
-          height: `calc(100vh )`,
-          // backgroundImage: `url(./images/yogahero.jpg)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center"
-        }}
+        style={
+          isAmp ? {
+            // - ${heights.navHeigt}
+            height: `calc(100vh )`,
+            backgroundImage: `url(./images/yogahero.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center center"
+          } : null
+        }
       >
-        <div className="hero__layer">
-          <Video  />
-        </div>
+        <div className="hero__layer">{!isAmp && <Video />}</div>
         <div className="hero__content">
           <div className="hero__box">
             <h1>Welcome to the world of Yoga</h1>
@@ -27,43 +30,44 @@ const FirstComponent = (): React.ReactElement => {
               eaque labore nulla doloremque laborum, odit nostrum
               necessitatibus.
             </p>
-            <p className="hero__quote">
-              <i>"Lorem ipsum dolor sit amet consectetur adipisicing elit"</i>
-            </p>
+            {isAmp && <a href="/" className="main-btn">PLAY VIDEO <FaRegPlayCircle color="white"/></a>}
           </div>
         </div>
       </div>
       <style jsx>{`
         .hero {
+          position: relative;
+          text-align: center;
+          background: #ffffff50;
+          height: 100vh;
           display: flex;
           justify-content: center;
           align-items: center;
-          flex-direction: column;
-          position: relative;
-          text-align: center;
-        }
-        .hero__quote {
-          color: white;
-          position: absolute;
-          bottom: 1rem;
-          right: 4rem;
+          overflow: hidden;
         }
         .hero__layer {
-          position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
+          position: absolute;
+          background: black;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          -ms-transform: translateX(-50%) translateY(-50%);
+          -moz-transform: translateX(-50%) translateY(-50%);
+          -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
           overflow: hidden;
-          z-index: -100;
+          opacity: ${isAmp ? 0.2 : 1};
+          z-index: 5;
         }
         .hero__content {
           max-width: 960px;
-          z-index: 2;
+          z-index: 10;
         }
         .hero__box {
           padding: 0 2rem;
-          height: 200px;
         }
         .hero p {
           color: white;
@@ -76,10 +80,25 @@ const FirstComponent = (): React.ReactElement => {
           z-index: 2;
           text-align: start;
         }
-        @media only screen and (max-width: 600px) {
-          .hero__quote {
-            right: 1rem;
-          }
+        & > video {
+          opacity: 0.5;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          z-index: 0;
+          -ms-transform: translateX(-50%) translateY(-50%);
+          -moz-transform: translateX(-50%) translateY(-50%);
+          -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+        }
+        a{
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       `}</style>
     </>

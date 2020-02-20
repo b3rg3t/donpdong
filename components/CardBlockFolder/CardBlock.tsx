@@ -44,6 +44,7 @@ const CardBlock = (): React.ReactElement => {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background: white;
             ${isAmp && "padding-top: 3rem;"}
             ${isAmp && "padding-bottom: 3rem;"}
           }
