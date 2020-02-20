@@ -36,7 +36,7 @@ const CardBlock = (): React.ReactElement => {
         </div>
         <style jsx>{`
           h2 {
-            margin: 2rem;
+            margin: 0 0 2rem 0;
           }
           .cards {
             min-height: 100vh;

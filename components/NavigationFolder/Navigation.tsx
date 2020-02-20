@@ -7,6 +7,7 @@ import AmpSidebar from "./AmpSidebar";
 
 import { GiEarthAfricaEurope } from "react-icons/gi";
 import { FaBars } from "react-icons/fa";
+import Hamburger from "./Hamburger";
 
 const Navigation = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -14,18 +15,13 @@ const Navigation = (): React.ReactElement => {
   return (
     <>
       <header>
-        {isAmp && <AmpSidebar />}
-        <nav style={{ height: `${heights.navHeigt}` }}>
-          <div className="nav__boxes">
-            <Link href={`#hero`}>
-              <a>
-                <GiEarthAfricaEurope color="gray" size="3rem" />
-                {SEOdata.title.toUpperCase()}
-              </a>
-            </Link>
+        {!isAmp ? (
+          <div className="ham-nav">
+            <Hamburger />
           </div>
-          <div className="nav__boxes"></div>
-          {isAmp ? (
+        ) : (
+          <>
+            <AmpSidebar />
             <div className="nav__boxes amp-button">
               <button
                 style={{
@@ -44,7 +40,19 @@ const Navigation = (): React.ReactElement => {
                 <FaBars />
               </button>
             </div>
-          ) : (
+          </>
+        )}
+        <nav style={{ height: `${heights.navHeigt}` }}>
+          <div className="nav__boxes">
+            <Link href={`#hero`}>
+              <a>
+                <GiEarthAfricaEurope color="gray" size="3rem" />
+                {SEOdata.title.toUpperCase()}
+              </a>
+            </Link>
+          </div>
+          <div className="nav__boxes"></div>
+          {!isAmp && (
             <div className="nav__boxes">
               <ul className="nav__boxes">
                 {Links &&
@@ -96,8 +104,22 @@ const Navigation = (): React.ReactElement => {
             align-items: center;
           }
           .amp-button {
+            position: fixed;
             justify-content: flex-end;
-            margin-right: 1rem;
+            z-index: 300;
+            top: 1rem;
+            right: 1rem;
+          }
+          .ham-nav {
+            display: none;
+          }
+          @media only screen and (max-width: 600px) {
+            nav {
+              display: none;
+            }
+            .ham-nav {
+              display: block;
+            }
           }
         `}
       </style>

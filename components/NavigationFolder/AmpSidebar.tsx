@@ -103,11 +103,16 @@ const AmpSidebar = (): React.ReactElement => {
           a {
             color: white;
             text-decoration: none;
+            font-size: 1.2rem;
           }
           .social-media-div {
             display: flex;
             justify-content: center;
             align-items: center;
+            
+          }
+          .social-media-div a{
+            font-size: 1.6rem;
           }
           .logo-link a {
             display: flex;
