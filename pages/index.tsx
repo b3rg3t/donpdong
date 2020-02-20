@@ -54,10 +54,6 @@ export const DataContext = React.createContext<PageData | null>(null);
 export const config = { amp: "hybrid" };
 
 const Index: React.FunctionComponent = (props: any) => {
-  // console.log(props.response.data.allCourses[0].date);
-  //@ts-ignore
-// let now = moment(props.response.data.allCourses[0].date).format("LLLL");
-// console.log(now)
   return (
     <DataContext.Provider value={props.response}>
       <ComponentRenderer />
