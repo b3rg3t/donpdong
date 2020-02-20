@@ -92,7 +92,6 @@ const Courses = (): React.ReactElement => {
           justify-content: center;
           align-items: center;
           width: 100%;
-          margin: 2rem 0;
           max-width: 1200px;
         }
         .cards__block {
@@ -168,6 +167,15 @@ const Courses = (): React.ReactElement => {
         .textP {
           padding: 1rem 0 1rem 0;
           min-height: 120px;
+        }
+        @media only screen and (max-width: 960px) {
+          .cards {
+            padding-top: 4rem;
+            margin-bottom: 3rem;
+          }
+          .cards__panels {
+            margin-bottom: 2rem;
+          }
         }
       `}</style>
     </>

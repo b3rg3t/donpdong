@@ -84,7 +84,8 @@ const CardBlock = (): React.ReactElement => {
           }
           @media only screen and (max-width: 960px) {
             .cards {
-              margin-bottom: 2rem;
+              padding-top: 4rem;
+              margin-bottom: 4rem;
             }
             .cards__panels {
               margin-bottom: 2rem;
