@@ -29,6 +29,21 @@ const AmpCourses = (): React.ReactElement => {
                 let day = date.substring(0, 3).toUpperCase();
                 let number = date.substring(4, 6);
                 let month = date.substring(7, 10).toUpperCase();
+                // console.log(date);
+                //@ts-ignore
+                let comDate = moment(course.date).format("L");
+                //@ts-ignore
+                let comparedDates = moment(
+                  comDate.replace("-", "").replace("-", ""),
+                  "YYYYMMDD"
+                ).fromNow();
+                let past = false;
+                if (comparedDates.includes("timmar")) {
+                  past = false;
+                  comparedDates = "Idag";
+                } else if (comparedDates.includes("för")) {
+                  past = true;
+                }
                 return (
                   <article key={index} className="course__panels">
                     <div className="course__panels__div background">
@@ -52,6 +67,9 @@ const AmpCourses = (): React.ReactElement => {
                           <span>{`Plats: ${
                             course.location ? course.location : "Okänd"
                           }`}</span>
+                          <span>{`Tid: ${
+                            course.time ? course.time : "Okänd"
+                          }`}</span>
                         </div>
                         <div className="date">
                           <DateBox month={month} number={number} day={day} />
@@ -60,14 +78,25 @@ const AmpCourses = (): React.ReactElement => {
                       <div className="textP">
                         <p>{course.content}</p>
                       </div>
-                      <a
-                        className="external-link"
-                        href={course.externalurl}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        Se tillgänglighet
-                      </a>
+                      {past ? (
+                        <>
+                          <button className="main-btn" disabled={true}>
+                            Passerat datum
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          <a
+                            title={course.externalurl}
+                            className="external-link"
+                            href={course.externalurl}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            Se tillgänglighet
+                          </a>
+                        </>
+                      )}
                     </div>
                   </article>
                 );
@@ -75,7 +104,7 @@ const AmpCourses = (): React.ReactElement => {
           </div>
         </div>
       </div>
-     <CoursesStyling />
+      <CoursesStyling />
     </>
   ) : (
     <div
