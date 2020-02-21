@@ -3,7 +3,7 @@ import Video from "../AMP/AmpVideo";
 // import heights from "../../helpers/helpdata";
 // import { colors } from "../AMP/AmpStyling";
 import { useAmp } from "next/amp";
-import { FaRegPlayCircle, FaArrowAltCircleDown } from "react-icons/fa";
+import { FaRegPlayCircle } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 
 const FirstComponent = (): React.ReactElement => {
@@ -35,12 +35,14 @@ const FirstComponent = (): React.ReactElement => {
             </p>
             {isAmp && (
               <a href="/" className="main-btn">
-                <span className="play-text">PLAY VIDEO</span><FaRegPlayCircle className="play-icon" color="white" />
+                <span className="play-text">PLAY VIDEO</span>
+                <FaRegPlayCircle className="play-icon" color="white" />
               </a>
             )}
           </div>
           <div className="hero__bottom-arrow">
             <a className="arrow-down" href="#cards">
+              <span aria-label="Move down to cards block" />
               <IoIosArrowDown />
             </a>
           </div>
@@ -122,19 +124,10 @@ const FirstComponent = (): React.ReactElement => {
           0% {
             opacity: 0;
             transform: translate(0px 0px);
-            
           }
           100% {
             opacity: 1;
             transform: translate(0, 10px);
-          }
-        }
-        @keyframes dripping {
-          0% {
-            
-          }
-          100% {
-            
           }
         }
       `}</style>

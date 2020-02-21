@@ -3,6 +3,7 @@ import Image from "../AMP/AmpImage";
 import { useAmp } from "next/amp";
 import DateBox from "../DateFolder/Date";
 import { DataContext } from "../../pages/index";
+import LazyLoad from "react-lazyload";
 import Loading from "../loading";
 import * as moment from "moment";
 import "moment/locale/sv";
@@ -32,13 +33,15 @@ const Courses = (): React.ReactElement => {
                   <article key={index} className="cards__panels">
                     <div className="card__panels__div background">
                       <div className="card__panels__div__img">
-                        <Image
-                          src={course.image.url}
-                          width={isAmp ? `${course.image.width}` : `auto`}
-                          height={isAmp ? `${course.image.height}` : "220"}
-                          alt={course.image.alt}
-                          layout="intrinsic"
-                        />
+                        <LazyLoad height={200}>
+                          <Image
+                            src={course.image.url}
+                            width={isAmp ? `${course.image.width}` : `auto`}
+                            height={isAmp ? `${course.image.height}` : "220"}
+                            alt={course.image.alt}
+                            layout="intrinsic"
+                          />
+                        </LazyLoad>
                       </div>
                     </div>
                     <div className="card__panels__div text">
@@ -53,11 +56,7 @@ const Courses = (): React.ReactElement => {
                           }`}</span>
                         </div>
                         <div className="date">
-                          <DateBox
-                            month={month}
-                            number={number}
-                            day={day}
-                          />
+                          <DateBox month={month} number={number} day={day} />
                         </div>
                       </div>
                       <div className="textP">
@@ -107,8 +106,8 @@ const Courses = (): React.ReactElement => {
           justify-content: center;
           align-items: center;
           background-color: #e7e7e7;
-          min-height: ${isAmp ? "" :  "200px"};
-          max-height: ${isAmp ? "175px" :  "220px"};
+          min-height: ${isAmp ? "" : "200px"};
+          max-height: ${isAmp ? "175px" : "220px"};
           position: relative;
           overflow: hidden;
         }

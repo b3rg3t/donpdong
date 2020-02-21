@@ -46,7 +46,7 @@ const Navigation = (): React.ReactElement => {
           <div className="nav__boxes">
             <Link href={`#hero`}>
               <a>
-                <GiEarthAfricaEurope color="gray" size="3rem" />
+                <GiEarthAfricaEurope size="3rem" />
                 {SEOdata.title.toUpperCase()}
               </a>
             </Link>
@@ -74,17 +74,14 @@ const Navigation = (): React.ReactElement => {
             position: fixed;
             top: 0;
             width: 100%;
-            border-top: 0.5rem solid ${colors.secondary};
-            background-color: ${colors.white};
+            background-color: #00000090;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            -webkit-box-shadow: 0 8px 6px -6px ${colors.lightgray};
-            -moz-box-shadow: 0 8px 6px -6px ${colors.lightgray};
-            box-shadow: 0 8px 6px -6px ${colors.lightgray};
           }
           nav a {
+            color: white;
             transition: all 0.5s ease;
             display: flex;
             align-items: center;
@@ -107,8 +104,12 @@ const Navigation = (): React.ReactElement => {
             position: fixed;
             justify-content: flex-end;
             z-index: 300;
+            padding: 0;
             top: 1rem;
-            right: 1rem;
+            right: 1.3rem;
+          }
+          .hamburger {
+            padding: 0;
           }
           .ham-nav {
             display: none;

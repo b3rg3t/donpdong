@@ -37,8 +37,8 @@ class Hamburger extends React.Component {
               position: fixed;
               width: 28px;
               height: 24px;
-              right: 1rem;
-              top: 1rem;
+              right: 1.5rem;
+              top: 1.2rem;
               z-index: 10000;
             }
 
@@ -73,7 +73,7 @@ class Hamburger extends React.Component {
             /* General sidebar styles */
             .bm-menu {
               background: ${colors.secondary};
-              padding: 2.5em 1.5em 0;
+              padding: 1rem 1.5rem 0;
               font-size: 1.15em;
             }
 

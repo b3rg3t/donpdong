@@ -2,8 +2,7 @@ import React from "react";
 
 import Layout from "../components/LayoutFolder/Layout";
 import Hero from "../components/HeroFolder/Hero";
-import ImageBlock from "../components/ImageBlockFolder/ImageBlock";
-import LazyLoad from "react-lazyload";
+import ImageBlock from "../components/ImageBlockFolder/ImageBlock"; 
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
 import CardBlock from "../components/CardBlockFolder/CardBlock";
 import AmpStyling from "../components/AMP/AmpStyling";
@@ -16,36 +15,26 @@ import { useAmp } from "next/amp";
 const ComponentRenderer = (props: any): React.ReactElement => {
   const isAmp = useAmp();
   return (
-    <Layout title={`${SEOdata.title} | Home`}>
+    <Layout title={`${SEOdata.title} | Yoga`}>
       {!isAmp ? (
         <>
           <section id="hero">
             <Hero />
           </section>
           <section id="cards">
-            <LazyLoad height={200}>
-              <CardBlock />
-            </LazyLoad>
+            <CardBlock />
           </section>
           <section id="about">
-            <LazyLoad height={200}>
-              <ProfilBlock />
-            </LazyLoad>
+            <ProfilBlock />
           </section>
           <section id="articles">
-            <LazyLoad height={200}>
-              <ImageBlock />
-            </LazyLoad>
+            <ImageBlock />
           </section>
           <section id="courses">
-            <LazyLoad height={200}>
-              <Courses />
-            </LazyLoad>
+            <Courses />
           </section>
           <section id="contact">
-            <LazyLoad height={200}>
-              <ContactBlock />
-            </LazyLoad>
+            <ContactBlock />
           </section>
           <AmpStyling />
         </>
