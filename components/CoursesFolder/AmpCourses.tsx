@@ -3,14 +3,13 @@ import Image from "../AMP/AmpImage";
 import { useAmp } from "next/amp";
 import DateBox from "../DateFolder/Date";
 import { DataContext } from "../../pages/index";
-import LazyLoad from "react-lazyload";
 import Loading from "../loading";
 import * as moment from "moment";
 import "moment/locale/sv";
-import { colors } from "../../helpers/helpdata";
+
 import CoursesStyling from "./CoursesStyling";
 
-const Courses = (): React.ReactElement => {
+const AmpCourses = (): React.ReactElement => {
   const isAmp = useAmp();
 
   const courses = useContext(DataContext);
@@ -34,15 +33,13 @@ const Courses = (): React.ReactElement => {
                   <article key={index} className="course__panels">
                     <div className="course__panels__div background">
                       <div className="course__panels__div__img">
-                        <LazyLoad height={200}>
-                          <Image
-                            src={course.image.url}
-                            width={isAmp ? `${course.image.width}` : `auto`}
-                            height={isAmp ? `${course.image.height}` : "220"}
-                            alt={course.image.alt}
-                            layout="intrinsic"
-                          />
-                        </LazyLoad>
+                        <Image
+                          src={course.image.url}
+                          width={isAmp ? `${course.image.width}` : `auto`}
+                          height={isAmp ? `${course.image.height}` : "220"}
+                          alt={course.image.alt}
+                          layout="intrinsic"
+                        />
                       </div>
                     </div>
                     <div className="course__panels__div text">
@@ -78,7 +75,7 @@ const Courses = (): React.ReactElement => {
           </div>
         </div>
       </div>
-    <CoursesStyling />
+     <CoursesStyling />
     </>
   ) : (
     <div
@@ -95,4 +92,4 @@ const Courses = (): React.ReactElement => {
   );
 };
 
-export default Courses;
+export default AmpCourses;

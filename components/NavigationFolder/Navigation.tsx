@@ -42,7 +42,12 @@ const Navigation = (): React.ReactElement => {
             </div>
           </>
         )}
-        <nav style={{ height: `${heights.navHeigt}` }}>
+        <nav
+          style={{
+            height: `${heights.navHeigt}`,
+            display: `${isAmp ? "none" : ""}`
+          }}
+        >
           <div className="nav__boxes">
             <Link href={`#hero`}>
               <a>

@@ -24,7 +24,7 @@ const CardBlock = (): React.ReactElement => {
                   <div className="card__panels__div">
                     <GiAllSeeingEye color="gray" size="8rem" />
                   </div>
-                  <div className="card__panels__div text">
+                  <div className="card__panels__div">
                     <p>{card.description}</p>
                   </div>
                   <div className="card__panels__div">
@@ -35,9 +35,6 @@ const CardBlock = (): React.ReactElement => {
           </div>
         </div>
         <style jsx>{`
-          h2 {
-            margin: 0 0 2rem 0;
-          }
           .cards {
             min-height: 100vh;
             display: flex;
@@ -53,9 +50,10 @@ const CardBlock = (): React.ReactElement => {
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
+            max-width: 1200px;  
           }
           .cards__panels {
-            margin: 0 2rem;
+            margin: 1rem 2rem;
             flex: 1 1 300px;
             justify-self: center;
             align-self: center;
@@ -74,20 +72,9 @@ const CardBlock = (): React.ReactElement => {
             justify-content: center;
             padding: 1rem;
           }
-          .text {
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-          }
-          ::-webkit-scrollbar-track {
-            background: #f9f9f9;
-          }
-          @media only screen and (max-width: 1100px) {
+          @media only screen and (max-width: 1100 px) {
             .cards {
               padding-top: 4rem;
-              margin-bottom: 4rem;
-            }
-            .cards__panels {
               margin-bottom: 2rem;
             }
           }

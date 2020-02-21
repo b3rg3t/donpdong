@@ -11,6 +11,9 @@ import { SEOdata } from "../helpers/helpdata";
 import Courses from "../components/CoursesFolder/Courses";
 
 import { useAmp } from "next/amp";
+import AmpCourses from "./CoursesFolder/AmpCourses";
+import AmpImageBlock from "./ImageBlockFolder/AmpImageBlock";
+import AmpProfilBlock from "./ProfileFolder/AmpProfileBlock";
 
 const ComponentRenderer = (props: any): React.ReactElement => {
   const isAmp = useAmp();
@@ -47,13 +50,13 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <CardBlock />
           </section>
           <section id="about">
-            <ProfilBlock />
+            <AmpProfilBlock />
           </section>
           <section id="articles">
-            <ImageBlock />
+            <AmpImageBlock />
           </section>
           <section id="courses">
-            <Courses />
+            <AmpCourses />
           </section>
           <section id="contact">
             <ContactBlock />
