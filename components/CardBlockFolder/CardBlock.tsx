@@ -82,7 +82,7 @@ const CardBlock = (): React.ReactElement => {
           ::-webkit-scrollbar-track {
             background: #f9f9f9;
           }
-          @media only screen and (max-width: 960px) {
+          @media only screen and (max-width: 1100px) {
             .cards {
               padding-top: 4rem;
               margin-bottom: 4rem;
