@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "../components/LayoutFolder/Layout";
 import Hero from "../components/HeroFolder/Hero";
-import ImageBlock from "../components/ImageBlockFolder/ImageBlock"; 
+import ImageBlock from "../components/ImageBlockFolder/ImageBlock";
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
 import CardBlock from "../components/CardBlockFolder/CardBlock";
 import AmpStyling from "../components/AMP/AmpStyling";
@@ -14,6 +14,7 @@ import { useAmp } from "next/amp";
 import AmpCourses from "./CoursesFolder/AmpCourses";
 import AmpImageBlock from "./ImageBlockFolder/AmpImageBlock";
 import AmpProfilBlock from "./ProfileFolder/AmpProfileBlock";
+import AmpContact from "./ContactBlockFolder/AmpContact";
 
 const ComponentRenderer = (props: any): React.ReactElement => {
   const isAmp = useAmp();
@@ -59,7 +60,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <AmpCourses />
           </section>
           <section id="contact">
-            <ContactBlock />
+            <AmpContact />
           </section>
           <AmpStyling />
         </>
