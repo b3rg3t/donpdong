@@ -4,6 +4,7 @@ import helpdata from "../../helpers/helpdata";
 import { colors } from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
 import { contactBlockStyle } from "../../helpers/helpdata";
+import PopUp from "../PopUpFolder/PopUp";
 
 const axios = require("axios");
 
@@ -13,6 +14,8 @@ const Form = (): React.ReactElement => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [messageStatus, setMessageStatus] = useState(false);
+
   const isAmp = useAmp();
 
   const handleSubmit = async event => {
@@ -38,19 +41,32 @@ const Form = (): React.ReactElement => {
         setName("");
         setEmail("");
         setMessage("");
-        setSubmitMessage("Email sent");
+        setMessageStatus(true);
+        setSubmitMessage("Meddelande skickat!");
       } else {
         console.log("Something went wrong" + response.status);
       }
     } catch (error) {
       console.log(error);
       setLoading(false);
-      setSubmitMessage("Something went wrong, " + error.message);
+      setMessageStatus(false);
+      setSubmitMessage(error.message);
     }
+  };
+  const handleClick = (status: boolean) => {
+    setMessageStatus(status);
   };
   const isDisabled = message.length > 0 && email.length > 0 && name.length > 0;
   return (
     <>
+      {messageStatus && (
+        <PopUp
+          submitMessage={submitMessage}
+          messageStatus={messageStatus}
+          handleClick={handleClick}
+        />
+      )}
+
       <section
         style={{
           height: `${contactBlockStyle.height}`,
@@ -96,13 +112,6 @@ const Form = (): React.ReactElement => {
               placeholder="Skriv ett meddelande.."
               required
             />
-            <div className="contact__form__loading">
-              {submitMessage && (
-                <span role="alert" className="loading">
-                  {submitMessage}
-                </span>
-              )}
-            </div>
             <button
               className="contact__form__button main-btn"
               type="submit"
@@ -115,74 +124,76 @@ const Form = (): React.ReactElement => {
           </form>
         </div>
       </section>
-        <style jsx>{`
-          .contact {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 1rem 0;
-          }
-          .contact h3 {
-            margin: 1rem 0 2rem 0;
-            text-align: center;
-          }
-          .contact__form__div {
-            width: 100%;
-            height: 100%;
-            background-color: ${colors.color6};
-            padding: 2rem;
-            border-radius: 1rem;
-            -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-            -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-            box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-          }
-          .contact form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-          }
-          .contact__form__loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 1.2rem;
-          }
-          .contact input {
-            font-family: "Dosis", sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            border-radius: 30px;
-            padding: 4px 0 4px 8px;
-            border: 1px solid ${colors.transparent};
-            -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-            -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-            box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-          }
-          .contact input:focus {
-            outline: none;
-            border: 1px solid ${colors.secondary};
-            border-radius: 30px;
-          }
-          .contact textarea {
-            width: 100%;
-            font-family: "Dosis", sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            border-radius: 10px;
-            border: 1px solid ${colors.transparent};
-            padding: 0.5rem;
-            -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-            -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-            box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-          }
-          .contact textarea:focus {
-            outline: none;
-            border: 1px solid ${colors.secondary};
-            border-radius: 10px;
-          }
-          form button {margin-top: 1rem;}
-        `}</style>
+      <style jsx>{`
+        .contact {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin: 1rem 0;
+        }
+        .contact h3 {
+          margin: 1rem 0 2rem 0;
+          text-align: center;
+        }
+        .contact__form__div {
+          width: 100%;
+          height: 100%;
+          background-color: ${colors.color6};
+          padding: 2rem;
+          border-radius: 1rem;
+          -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+          -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+          box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+        }
+        .contact form {
+          display: flex;
+          flex-direction: column;
+          max-width: 400px;
+        }
+        .contact__form__loading {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 1.2rem;
+        }
+        .contact input {
+          font-family: "Dosis", sans-serif;
+          font-weight: 400;
+          font-size: 1rem;
+          border-radius: 30px;
+          padding: 4px 0 4px 8px;
+          border: 1px solid ${colors.transparent};
+          -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+          -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+          box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+        }
+        .contact input:focus {
+          outline: none;
+          border: 1px solid ${colors.secondary};
+          border-radius: 30px;
+        }
+        .contact textarea {
+          width: 100%;
+          font-family: "Dosis", sans-serif;
+          font-weight: 400;
+          font-size: 1rem;
+          border-radius: 10px;
+          border: 1px solid ${colors.transparent};
+          padding: 0.5rem;
+          -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+          -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+          box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+        }
+        .contact textarea:focus {
+          outline: none;
+          border: 1px solid ${colors.secondary};
+          border-radius: 10px;
+        }
+        form button {
+          margin-top: 2rem;
+        }
+      `}</style>
     </>
   );
 };

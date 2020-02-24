@@ -13,6 +13,7 @@ interface Course {
   externalurl: string;
   content: string;
   location: string;
+  time: string;
   image?: {
     alt: string;
     title?: string;

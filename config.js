@@ -15,6 +15,8 @@ export const body = JSON.stringify({
           date
           location
           content
+          time
+          externalurl
           image {
             alt
             url

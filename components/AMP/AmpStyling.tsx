@@ -48,7 +48,9 @@ const AmpStyling = (): React.ReactElement => {
       a {
         text-decoration: none;
       }
-
+      img {
+        animation: easein 3s;
+      }
       a,
       p,
       ul,

@@ -7,6 +7,7 @@ import AmpSidebar from "./AmpSidebar";
 
 import { GiEarthAfricaEurope } from "react-icons/gi";
 import { FaBars } from "react-icons/fa";
+import Hamburger from "./Hamburger";
 
 const Navigation = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -14,18 +15,13 @@ const Navigation = (): React.ReactElement => {
   return (
     <>
       <header>
-        {isAmp && <AmpSidebar />}
-        <nav style={{ height: `${heights.navHeigt}` }}>
-          <div className="nav__boxes">
-            <Link href={`#hero`}>
-              <a>
-                <GiEarthAfricaEurope color="gray" size="3rem" />
-                {SEOdata.title.toUpperCase()}
-              </a>
-            </Link>
+        {!isAmp ? (
+          <div className="ham-nav">
+            <Hamburger />
           </div>
-          <div className="nav__boxes"></div>
-          {isAmp ? (
+        ) : (
+          <>
+            <AmpSidebar />
             <div className="nav__boxes amp-button">
               <button
                 style={{
@@ -44,7 +40,24 @@ const Navigation = (): React.ReactElement => {
                 <FaBars />
               </button>
             </div>
-          ) : (
+          </>
+        )}
+        <nav
+          style={{
+            height: `${heights.navHeigt}`,
+            display: `${isAmp ? "none" : ""}`
+          }}
+        >
+          <div className="nav__boxes">
+            <Link href={`#hero`}>
+              <a>
+                <GiEarthAfricaEurope size="3rem" />
+                {SEOdata.title.toUpperCase()}
+              </a>
+            </Link>
+          </div>
+          <div className="nav__boxes"></div>
+          {!isAmp && (
             <div className="nav__boxes">
               <ul className="nav__boxes">
                 {Links &&
@@ -66,17 +79,14 @@ const Navigation = (): React.ReactElement => {
             position: fixed;
             top: 0;
             width: 100%;
-            border-top: 0.5rem solid ${colors.secondary};
-            background-color: ${colors.white};
+            background-color: #00000090;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            -webkit-box-shadow: 0 8px 6px -6px ${colors.lightgray};
-            -moz-box-shadow: 0 8px 6px -6px ${colors.lightgray};
-            box-shadow: 0 8px 6px -6px ${colors.lightgray};
           }
           nav a {
+            color: white;
             transition: all 0.5s ease;
             display: flex;
             align-items: center;
@@ -96,8 +106,26 @@ const Navigation = (): React.ReactElement => {
             align-items: center;
           }
           .amp-button {
+            position: fixed;
             justify-content: flex-end;
-            margin-right: 1rem;
+            z-index: 300;
+            padding: 0;
+            top: 1rem;
+            right: 1.3rem;
+          }
+          .hamburger {
+            padding: 0;
+          }
+          .ham-nav {
+            display: none;
+          }
+          @media only screen and (max-width: 600px) {
+            nav {
+              display: none;
+            }
+            .ham-nav {
+              display: block;
+            }
           }
         `}
       </style>
