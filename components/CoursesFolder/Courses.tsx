@@ -30,7 +30,6 @@ const Courses = (): React.ReactElement => {
                 let day = date.substring(0, 3).toUpperCase();
                 let number = date.substring(4, 6);
                 let month = date.substring(7, 10).toUpperCase();
-                // console.log(date);
                 //@ts-ignore
                 let comDate = moment(course.date).format("L");
                 //@ts-ignore
@@ -42,7 +41,7 @@ const Courses = (): React.ReactElement => {
                 if (comparedDates.includes("timmar")) {
                   past = false;
                   comparedDates = "Idag";
-                } else if (comparedDates.includes("för")) {
+                } else if (comparedDates.includes("sedan")) {
                   past = true;
                 }
                 return (

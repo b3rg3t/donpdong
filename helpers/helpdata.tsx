@@ -46,7 +46,7 @@ export const SocialMedia = {
     url: "https://www.facebook.com/",
     title: "Facebook"
   },
-  linkedin: { 
+  linkedin: {
     url: "https://www.linkedin.com/",
     title: "LinkedIn"
   }
@@ -54,29 +54,34 @@ export const SocialMedia = {
 
 //Links to page
 export const Links = [
-    {
-        href: "#cards",
-        title: "Yoga",
-        url: ""
-    },
-    {
-        href: "#about",
-        title: "Om",
-        url: ""
-    },
-    {
-        href: "#articles",
-        title: "Artiklar",
-        url: ""
-    },
-    {
-        href: "#courses",
-        title: "Kurser",
-        url: ""
-    },
-    {
-        href: "#contact",
-        title: "Kontakt",
-        url: ""
-    }
-]
+  {
+    href: "#cards",
+    title: "Yoga",
+    url: ""
+  },
+  {
+    href: "#about",
+    title: "Om",
+    url: ""
+  },
+  {
+    href: "#articles",
+    title: "Artiklar",
+    url: ""
+  },
+  {
+    href: "#courses",
+    title: "Kurser",
+    url: ""
+  },
+  {
+    href: "#contact",
+    title: "Kontakt",
+    url: ""
+  }
+];
+
+//Profile info
+export const ProfileInfo = {
+  name: "Vickan"
+};
