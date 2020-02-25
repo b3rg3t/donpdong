@@ -91,6 +91,7 @@ const Navigation = (): React.ReactElement => {
             display: flex;
             align-items: center;
             padding: 0.5rem;
+            font-weight: bold;
           }
           nav a:hover {
             color: ${colors.secondary};

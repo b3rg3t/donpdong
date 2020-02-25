@@ -40,7 +40,7 @@ const ImageBlock = (): React.ReactElement => {
   return articleData?.length > 0 ? (
     <>
       {articleData.map((img, index) => (
-        <LazyLoad key={index} height="100vh" offset={[200, 0]}>
+        <LazyLoad key={index} height="100vh" offset={[300, 0]}>
           <div
             className="image-block"
             style={{

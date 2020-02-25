@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ProfileInfo } from "../../helpers/helpdata";
 import { IoIosClose } from "react-icons/io";
 import { FaRegPaperPlane } from "react-icons/fa";
+import { useOnClickOutside } from "../../helpers/hooks";
 
 interface PopUpProps {
   submitMessage: string;
@@ -14,13 +15,17 @@ const PopUp = ({
   messageStatus,
   handleClick
 }: PopUpProps): React.ReactElement => {
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => closeModal());
+
   const closeModal = () => {
     return handleClick(false);
   };
   return (
     <>
       <article className="popup">
-        <div role="alert" className="popup-modal">
+        <div ref={ref} role="alert" className="popup-modal">
           <button className="popup-modal__close" onClick={closeModal}>
             <IoIosClose />
           </button>
@@ -65,6 +70,7 @@ const PopUp = ({
           -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+          z-index: 100001;
         }
         .popup-modal p {
           margin-top: 1rem;
@@ -83,7 +89,7 @@ const PopUp = ({
           justify-content: center;
         }
         .popup-modal__close:hover {
-            color: gray;
+          color: gray;
         }
         .main-btn {
           margin-top: 1rem;
