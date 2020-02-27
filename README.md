@@ -1,2 +1,2 @@
 # donpdong
-test project with mobx
+Boilerplate for training website
